@@ -144,7 +144,7 @@ header {
     min-height: 600px;
     display: flex;
     align-items: center;
-    background: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    background: url('https://raw.githubusercontent.com/ATIVBRASIL/ativbrasil.com.br/refs/heads/main/images/apertomao.png') center/cover no-repeat;
 }
 
 .hero-overlay {
@@ -333,4 +333,5 @@ footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: cente
     .cta-group { justify-content: center; flex-direction: column; }
     .manifesto-text p { font-size: 1.2rem; }
     .manifesto-text p:last-child { font-size: 1.5rem; }
+
 }
