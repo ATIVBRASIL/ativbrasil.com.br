@@ -144,7 +144,8 @@ header {
     min-height: 600px;
     display: flex;
     align-items: center;
-    background: url('https://raw.githubusercontent.com/ATIVBRASIL/ativbrasil.com.br/refs/heads/main/images/apertomao.png') center/cover no-repeat;
+    /* ATUALIZADO: Alinhamento à DIREITA (right) */
+    background: url('images/apertomao.png') right center / cover no-repeat;
 }
 
 .hero-overlay {
