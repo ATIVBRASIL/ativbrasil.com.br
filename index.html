@@ -299,9 +299,10 @@
             transition: transform 0.5s ease-out 0.5s;
             pointer-events: none;
         }
+        /* Mobile: esconde o círculo e segmento — evita posicionamento errado */
         @media(max-width:1023px) {
-            .connector-junction { left: 22px; }
-            .connector-segment { left: 22px; width: calc(100% - 22px); transform-origin: left center; }
+            .connector-junction { display: none; }
+            .connector-segment { display: none; }
         }
         @media(min-width:1024px) {
             .reveal-item:not(.inverted) .connector-junction { left: -48px; }
@@ -586,9 +587,9 @@
 
         .raw-text {
             font-family: 'DM Mono', monospace;
-            font-size: 12px;
-            line-height: 1.9;
-            color: #555;
+            font-size: 14px;
+            line-height: 2.0;
+            color: #888;
             font-style: italic;
             flex: 1;
         }
@@ -598,18 +599,18 @@
             border-top: 1px solid var(--border);
             display: flex;
             gap: 10px;
-            font-size: 12px;
-            color: #666;
-            line-height: 1.6;
+            font-size: 13px;
+            color: #999;
+            line-height: 1.7;
         }
-        .verdict strong { display:block; font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:#e74c3c; margin-bottom:4px; }
+        .verdict strong { display: block; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #e74c3c; margin-bottom: 4px; }
 
         .refined-col { background: #0d0d0d; padding: 28px 24px; }
         .report-header { border-bottom:1px solid var(--border); padding-bottom:14px; margin-bottom:20px; }
-        .report-title { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:#fff; margin-bottom:8px; }
+        .report-title { font-family:'DM Mono',monospace; font-size: 11px; letter-spacing:.2em; text-transform:uppercase; color:#fff; margin-bottom:8px; }
         .report-meta { display:flex; flex-wrap:wrap; gap:14px; }
-        .meta-item { font-family:'DM Mono',monospace; font-size:10px; color:#666; }
-        .meta-item span { color:#aaa; }
+        .meta-item { font-family:'DM Mono',monospace; font-size: 11px; color: #999; }
+        .meta-item span { color: #ddd; }
         .report-section { margin-bottom:16px; }
         .section-number { display:inline-flex; align-items:center; gap:8px; margin-bottom:8px; }
         .snb { font-family:'DM Mono',monospace; font-size:9px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; padding:3px 8px; border-radius:2px; }
@@ -618,11 +619,11 @@
         .snb-outcome { background:rgba(39,174,96,0.1); color:#27ae60; border:1px solid rgba(39,174,96,0.2); }
         .snb-terms { background:rgba(155,89,182,0.1); color:#9b59b6; border:1px solid rgba(155,89,182,0.2); }
         .sn-label { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.12em; text-transform:uppercase; color:#444; }
-        .section-body { font-size:12px; line-height:1.85; color:#b8b8b8; border-left:2px solid var(--border); padding-left:14px; }
-        .terms-list { list-style:none; padding:0; }
-        .terms-list li { font-size:11px; line-height:1.65; color:#777; padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.04); }
-        .terms-list li:last-child { border:none; }
-        .terms-list strong { color:#aaa; font-size:10px; text-transform:uppercase; }
+        .section-body { font-size: 14px; line-height: 1.95; color: #d0d0d0; border-left: 2px solid var(--border); padding-left: 14px; }
+        .terms-list { list-style: none; padding: 0; }
+        .terms-list li { font-size: 13px; line-height: 1.75; color: #aaa; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+        .terms-list li:last-child { border: none; }
+        .terms-list strong { color: #ddd; font-size: 11px; text-transform: uppercase; }
         .report-footer { display:flex; align-items:center; justify-content:space-between; margin-top:16px; padding-top:14px; border-top:1px solid var(--border); flex-wrap:wrap; gap:8px; }
         .integrity-badge { display:flex; align-items:center; gap:6px; font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.12em; text-transform:uppercase; color:#27ae60; }
         .integrity-dot { width:6px;height:6px;border-radius:50%;background:#27ae60; }
@@ -639,15 +640,15 @@
         .pillars { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-bottom:40px; }
         @media(max-width:600px) { .pillars { grid-template-columns:1fr; } }
         .pillar { background:#181818; border:1px solid var(--border); padding:24px 20px; border-radius:2px; }
-        .pillar-icon { font-size:22px; margin-bottom:10px; }
-        .pillar-title { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.15em; text-transform:uppercase; color:#C5A059; margin-bottom:8px; }
-        .pillar-text { font-size:12px; font-weight:300; color:#666; line-height:1.65; }
+        .pillar-icon { font-size:24px; margin-bottom:10px; }
+        .pillar-title { font-family:'DM Mono',monospace; font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:#C5A059; margin-bottom:8px; }
+        .pillar-text { font-size: 14px; font-weight:300; color: #aaa; line-height:1.75; }
 
         .closing { border:1px solid rgba(197,160,89,0.15); border-radius:4px; padding:28px 20px; background:linear-gradient(135deg,#0d0d0d 0%,#111008 100%); display:grid; grid-template-columns:1fr; gap:24px; align-items:center; }
         @media(min-width:640px) { .closing { grid-template-columns:1fr auto; padding:40px; gap:32px; } }
         .closing-headline { font-family:'Bebas Neue',sans-serif; font-size:clamp(22px,3vw,32px); letter-spacing:.02em; line-height:1.2; color:#fff; }
         .closing-headline em { font-style:normal; color:#C5A059; }
-        .closing-sub { font-size:13px; font-weight:300; color:#666; margin-top:10px; line-height:1.65; }
+        .closing-sub { font-size: 15px; font-weight: 300; color: #999; margin-top: 10px; line-height: 1.75; }
         .cta-btn { display:inline-flex; align-items:center; gap:10px; background:#C5A059; color:#000; font-family:'DM Mono',monospace; font-size:11px; font-weight:500; letter-spacing:.15em; text-transform:uppercase; padding:16px 28px; border-radius:2px; text-decoration:none; white-space:nowrap; transition:background 0.2s; }
         .cta-btn:hover { background:#d6b46a; }
 
@@ -1217,15 +1218,31 @@
 
     // ── FLOATING CTA ──
     const floatingCta = document.getElementById('floatingCta');
-    const ctaTrigger = document.getElementById('cta-pos-convicao');
-    const ctaTriggerObserver = new IntersectionObserver((entries) => {
+    const antesDeppois = document.getElementById('antes-depois');
+    const closingBlock = document.getElementById('cta-pos-convicao');
+
+    // Aparece ao entrar na seção antes/depois
+    const showObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) floatingCta.classList.add('visible');
+        });
+    }, { threshold: 0.1 });
+    if (antesDeppois) showObserver.observe(antesDeppois);
+
+    // Some quando o botão fixo do closing está visível (evita sobreposição)
+    const hideObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                floatingCta.classList.add('visible');
+                floatingCta.style.opacity = '0';
+                floatingCta.style.pointerEvents = 'none';
+                floatingCta.style.transition = 'opacity 0.3s ease, transform 0.5s cubic-bezier(0.34,1.56,0.64,1)';
+            } else if (floatingCta.classList.contains('visible')) {
+                floatingCta.style.opacity = '1';
+                floatingCta.style.pointerEvents = 'auto';
             }
         });
-    }, { threshold: 0.5 });
-    if (ctaTrigger) ctaTriggerObserver.observe(ctaTrigger);
+    }, { threshold: 0.2 });
+    if (closingBlock) hideObserver.observe(closingBlock);
 
     // ── SCROLL TO CONTACT ──
     function scrollToContact() {
