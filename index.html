@@ -1,325 +1,1236 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TDL8RGGV');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ATIV Brasil - Ecossistema de Governança, Conformidade Operacional e Blindagem Jurídica para a Segurança Privada.">
-    <title>ATIV Brasil — Blindagem Jurídica e Conformidade Operacional</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@500;700;800&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="styles.css">
+    <title>ATIV Brasil — Governança e Inteligência Operacional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=DM+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green: #22c55e;
+            --green-dim: rgba(34,197,94,0.12);
+            --orange: #f97316;
+            --orange-dim: rgba(249,115,22,0.10);
+            --red: #ef4444;
+            --gold: #C5A059;
+            --gold-dim: rgba(197,160,89,0.10);
+            --surface: #0d0d0d;
+            --surface2: #111111;
+            --surface3: #181818;
+            --border: rgba(255,255,255,0.07);
+            --muted: #555;
+            --text: #d4d4d4;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #050505;
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        /* ── NOISE TEXTURE OVERLAY ── */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.4;
+        }
+
+        /* ── TYPOGRAPHY ── */
+        .font-display { font-family: 'Bebas Neue', sans-serif; }
+        .font-mono { font-family: 'DM Mono', monospace; }
+        .font-body { font-family: 'DM Sans', sans-serif; }
+
+        /* ── HERO ── */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: #050505;
+        }
+
+        .hero-grid-bg {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(34,197,94,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(34,197,94,0.04) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+        }
+
+        .hero-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 600px;
+            background: radial-gradient(ellipse, rgba(34,197,94,0.07) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-scanner {
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-scanner::after {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: linear-gradient(to bottom, transparent, rgba(34,197,94,0.15), transparent);
+            animation: scan 5s ease-in-out infinite;
+        }
+        @keyframes scan {
+            0% { top: -100%; }
+            100% { top: 120%; }
+        }
+
+        /* Pioneer badge */
+        .pioneer-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, rgba(249,115,22,0.12), rgba(249,115,22,0.06));
+            border: 1px solid rgba(249,115,22,0.3);
+            border-radius: 2px;
+            padding: 8px 16px;
+            font-family: 'DM Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--orange);
+            margin-bottom: 28px;
+        }
+        .pioneer-badge .dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--orange);
+            animation: pioneerPulse 2s infinite;
+        }
+        @keyframes pioneerPulse {
+            0%,100% { opacity:1; box-shadow: 0 0 0 0 rgba(249,115,22,0.6); }
+            50% { opacity:0.6; box-shadow: 0 0 0 8px rgba(249,115,22,0); }
+        }
+
+        /* Law stamp */
+        .law-stamp {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(239,68,68,0.08);
+            border: 1px solid rgba(239,68,68,0.25);
+            border-radius: 2px;
+            padding: 5px 12px;
+            font-family: 'DM Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 0.12em;
+            color: var(--red);
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: var(--green);
+            color: #000;
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            padding: 18px 36px;
+            border-radius: 2px;
+            cursor: pointer;
+            border: none;
+            transition: background 0.2s, transform 0.15s;
+            width: 100%;
+        }
+        @media(min-width: 640px) { .btn-primary { width: auto; } }
+        .btn-primary:hover { background: #16a34a; transform: translateY(-1px); }
+
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: transparent;
+            color: var(--text);
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 18px 28px;
+            border: 1px solid var(--border);
+            border-radius: 2px;
+            cursor: pointer;
+            transition: border-color 0.2s, color 0.2s;
+            width: 100%;
+        }
+        @media(min-width: 640px) { .btn-ghost { width: auto; } }
+        .btn-ghost:hover { border-color: rgba(255,255,255,0.2); color: #fff; }
+
+        /* ── FLOATING CTA BAR ── */
+        .floating-cta {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(120px);
+            z-index: 1000;
+            background: #111;
+            border: 1px solid rgba(34,197,94,0.3);
+            border-radius: 60px;
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.8), 0 0 40px rgba(34,197,94,0.08);
+            transition: transform 0.5s cubic-bezier(0.34,1.56,0.64,1);
+            white-space: nowrap;
+            max-width: calc(100vw - 32px);
+        }
+        .floating-cta.visible { transform: translateX(-50%) translateY(0); }
+        @media(max-width: 480px) {
+            .floating-cta-text { display: none; }
+            .floating-cta { gap: 0; padding: 12px 20px; }
+        }
+        .floating-cta-text {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 0.1em;
+            color: #888;
+        }
+        .floating-cta-text strong { color: #fff; }
+        .floating-cta-btn {
+            background: var(--green);
+            color: #000;
+            font-family: 'DM Mono', monospace;
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            border-radius: 40px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .floating-cta-btn:hover { background: #16a34a; }
+
+        /* ── TYPEWRITER SECTION ── */
+        .typewriter-section {
+            background: #050505;
+            padding: 80px 24px;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        .cursor {
+            display: inline-block;
+            width: 3px;
+            height: 1em;
+            background: var(--orange);
+            margin-left: 4px;
+            vertical-align: middle;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+        /* ── PATH / STORYTELLING ── */
+        .path-line {
+            position: absolute;
+            left: 20px;
+            top: 0; bottom: 0;
+            width: 2px;
+            background: #1a1a1a;
+        }
+        @media(min-width:1024px) {
+            .path-line { left: 50%; transform: translateX(-50%); }
+        }
+        .path-progress {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 0%;
+            background: linear-gradient(to bottom, var(--green), rgba(34,197,94,0.3));
+            transition: height 0.6s ease-out;
+        }
+
+        /* Reveal items */
+        .reveal-item {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal-item.active { opacity: 1; transform: translateY(0); }
+
+        /* Connector */
+        .connector-junction {
+            position: absolute;
+            top: 50%; z-index: 50;
+            width: 20px; height: 20px;
+            border-radius: 50%;
+            background: var(--red);
+            border: 3px solid #fff;
+            box-shadow: 0 0 20px rgba(239,68,68,0.7);
+            transform: translate(-50%,-50%) scale(0);
+            transition: transform 0.4s cubic-bezier(0.175,0.885,0.32,1.275) 0.3s;
+            pointer-events: none;
+        }
+        .connector-segment {
+            position: absolute;
+            top: 50%; height: 2px;
+            background: var(--green);
+            z-index: 5;
+            transform: scaleX(0);
+            transition: transform 0.5s ease-out 0.5s;
+            pointer-events: none;
+        }
+        @media(max-width:1023px) {
+            .connector-junction { left: 22px; }
+            .connector-segment { left: 22px; width: calc(100% - 22px); transform-origin: left center; }
+        }
+        @media(min-width:1024px) {
+            .reveal-item:not(.inverted) .connector-junction { left: -48px; }
+            .reveal-item:not(.inverted) .connector-segment { left: -48px; width: 48px; transform-origin: left center; }
+            .reveal-item.inverted .connector-junction { right: -48px; left: auto; }
+            .reveal-item.inverted .connector-segment { right: -48px; width: 48px; transform-origin: right center; left: auto; }
+        }
+        .reveal-item.active .connector-junction {
+            transform: translate(-50%,-50%) scale(1);
+            animation: junctionPulse 2s infinite;
+        }
+        .reveal-item.active .connector-segment { transform: scaleX(1); }
+        @keyframes junctionPulse {
+            0% { box-shadow: 0 0 0 0 rgba(239,68,68,0.7); }
+            70% { box-shadow: 0 0 0 14px rgba(239,68,68,0); }
+            100% { box-shadow: 0 0 0 0 rgba(239,68,68,0); }
+        }
+
+        /* Image border */
+        .image-border-wrapper {
+            position: relative;
+            padding: 2px;
+            border-radius: 0.75rem;
+            overflow: hidden;
+        }
+        .image-border-wrapper::before,
+        .image-border-wrapper::after {
+            content: '';
+            position: absolute;
+            width: 0; height: 0;
+            border: 0 solid var(--green);
+            transition: width 0.4s ease-out, height 0.4s ease-out;
+            z-index: 2;
+        }
+        .image-border-wrapper::before { top:0; left:0; border-top-width:2px; border-right-width:2px; transition-delay:1s; }
+        .image-border-wrapper::after { bottom:0; right:0; border-bottom-width:2px; border-left-width:2px; transition-delay:1.4s; }
+        .reveal-item.active .image-border-wrapper::before,
+        .reveal-item.active .image-border-wrapper::after { width:100%; height:100%; }
+
+        /* Alert bubble */
+        .alert-bubble {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff;
+            color: #000;
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 0.7rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        /* ── HIERARCHY SECTION ── */
+        .section-hierarchy {
+            background: var(--surface);
+            position: relative;
+            overflow: hidden;
+        }
+        .section-hierarchy::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--green), transparent);
+        }
+
+        .hierarchy-card {
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 24px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+            cursor: default;
+        }
+        .hierarchy-card:hover {
+            border-color: rgba(255,255,255,0.15);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+            transform: translateY(-2px);
+        }
+
+        .hcard-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        .hcard-icon {
+            width: 40px; height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        .hcard-level {
+            font-family: 'DM Mono', monospace;
+            font-size: 9px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 2px;
+        }
+        .hcard-title {
+            font-family: 'DM Mono', monospace;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #e5e5e5;
+        }
+        .hcard-desc {
+            font-size: 12px;
+            font-weight: 300;
+            color: #666;
+            line-height: 1.65;
+        }
+        .hcard-permissions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 4px;
+        }
+        .perm-tag {
+            font-family: 'DM Mono', monospace;
+            font-size: 9px;
+            letter-spacing: 0.08em;
+            padding: 3px 8px;
+            border-radius: 2px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.06);
+            color: #777;
+        }
+        .perm-tag.yes {
+            background: var(--green-dim);
+            border-color: rgba(34,197,94,0.2);
+            color: var(--green);
+        }
+
+        .liability-alert {
+            background: linear-gradient(135deg, rgba(239,68,68,0.06), rgba(239,68,68,0.02));
+            border: 1px solid rgba(239,68,68,0.2);
+            border-left: 3px solid var(--red);
+            border-radius: 4px;
+            padding: 20px 18px;
+        }
+        @media(min-width:640px) { .liability-alert { padding: 28px 32px; } }
+        .liability-alert .la-eyebrow {
+            font-family: 'DM Mono', monospace;
+            font-size: 9px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .liability-alert .la-dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--red);
+            animation: pioneerPulse 2s infinite;
+        }
+        .liability-alert .la-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(22px, 3vw, 32px);
+            color: #fff;
+            line-height: 1.15;
+            margin-bottom: 14px;
+        }
+        .liability-alert .la-text {
+            font-size: 13px;
+            font-weight: 300;
+            color: #888;
+            line-height: 1.8;
+        }
+        .liability-alert .la-text strong { color: #ccc; font-weight: 500; }
+        .liability-alert .la-law {
+            margin-top: 16px;
+            font-family: 'DM Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 0.12em;
+            color: rgba(239,68,68,0.6);
+        }
+
+        /* ── PLATFORM SECTION ── */
+        .section-platform { background: #0a0a0a; }
+
+        /* ── GALLERY ── */
+        .section-gallery { background: #0a0a0a; }
+        .gallery-card {
+            background: #171717;
+            border: 1px solid #262626;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+        }
+        .gallery-card:hover {
+            border-color: #404040;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+            transform: translateY(-3px);
+        }
+        .gallery-card img { width:100%; height:auto; display:block; }
+        .gallery-desc { padding: 1rem 1.25rem; }
+        .gallery-desc .line1 { font-size:.875rem; font-weight:600; color:#fff; margin-bottom:.25rem; }
+        .gallery-desc .line2 { font-size:.8125rem; color:#737373; line-height:1.5; }
+
+        /* ── ANTES E DEPOIS ── */
+        .section-ad {
+            --ad-gold: #C5A059;
+            --ad-gold-light: #d6b46a;
+            --ad-gold-dim: rgba(197,160,89,0.10);
+            --ad-surface: #111111;
+            --ad-border: rgba(255,255,255,0.07);
+            --ad-muted: #666;
+            --ad-orange: #d35400;
+            --ad-orange-dim: rgba(211,84,0,0.10);
+            --ad-blue: #7fb3f5;
+            --ad-green: #27ae60;
+            background: #080808;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .case-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'DM Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 2px;
+        }
+        .case-badge.level-low { background: rgba(52,152,219,0.08); color: #5dade2; border: 1px solid rgba(52,152,219,0.2); }
+        .case-badge.level-high { background: var(--ad-orange-dim,rgba(211,84,0,0.10)); color: #d35400; border: 1px solid rgba(211,84,0,0.25); }
+        .badge-dot { width:6px;height:6px;border-radius:50%;background:currentColor; }
+        .badge-dot.pulse { animation: adPulse 2s infinite; }
+        @keyframes adPulse { 0%,100%{opacity:1}50%{opacity:.35} }
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1.6fr;
+            gap: 2px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        @media(max-width:800px) { .comparison { grid-template-columns: 1fr; } }
+
+        .raw-col {
+            background: #111;
+            padding: 28px 24px;
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+        }
+        @media(max-width:800px) { .raw-col { border-right:none; border-bottom:1px solid var(--border); } }
+
+        .col-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'DM Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            padding: 5px 12px;
+            border-radius: 2px;
+            margin-bottom: 18px;
+            width: fit-content;
+        }
+        .col-label.raw { background: rgba(102,102,102,0.1); color: #888; border: 1px solid rgba(102,102,102,0.2); }
+        .col-label.refined { background: var(--ad-gold-dim,rgba(197,160,89,0.1)); color: #C5A059; border: 1px solid rgba(197,160,89,0.25); }
+        .col-dot { width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.7; }
+
+        .raw-text {
+            font-family: 'DM Mono', monospace;
+            font-size: 12px;
+            line-height: 1.9;
+            color: #555;
+            font-style: italic;
+            flex: 1;
+        }
+        .verdict {
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            gap: 10px;
+            font-size: 12px;
+            color: #666;
+            line-height: 1.6;
+        }
+        .verdict strong { display:block; font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:#e74c3c; margin-bottom:4px; }
+
+        .refined-col { background: #0d0d0d; padding: 28px 24px; }
+        .report-header { border-bottom:1px solid var(--border); padding-bottom:14px; margin-bottom:20px; }
+        .report-title { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:#fff; margin-bottom:8px; }
+        .report-meta { display:flex; flex-wrap:wrap; gap:14px; }
+        .meta-item { font-family:'DM Mono',monospace; font-size:10px; color:#666; }
+        .meta-item span { color:#aaa; }
+        .report-section { margin-bottom:16px; }
+        .section-number { display:inline-flex; align-items:center; gap:8px; margin-bottom:8px; }
+        .snb { font-family:'DM Mono',monospace; font-size:9px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; padding:3px 8px; border-radius:2px; }
+        .snb-facts { background:rgba(52,152,219,0.1); color:#3498db; border:1px solid rgba(52,152,219,0.2); }
+        .snb-tactical { background:rgba(211,84,0,0.1); color:#d35400; border:1px solid rgba(211,84,0,0.2); }
+        .snb-outcome { background:rgba(39,174,96,0.1); color:#27ae60; border:1px solid rgba(39,174,96,0.2); }
+        .snb-terms { background:rgba(155,89,182,0.1); color:#9b59b6; border:1px solid rgba(155,89,182,0.2); }
+        .sn-label { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.12em; text-transform:uppercase; color:#444; }
+        .section-body { font-size:12px; line-height:1.85; color:#b8b8b8; border-left:2px solid var(--border); padding-left:14px; }
+        .terms-list { list-style:none; padding:0; }
+        .terms-list li { font-size:11px; line-height:1.65; color:#777; padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.04); }
+        .terms-list li:last-child { border:none; }
+        .terms-list strong { color:#aaa; font-size:10px; text-transform:uppercase; }
+        .report-footer { display:flex; align-items:center; justify-content:space-between; margin-top:16px; padding-top:14px; border-top:1px solid var(--border); flex-wrap:wrap; gap:8px; }
+        .integrity-badge { display:flex; align-items:center; gap:6px; font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.12em; text-transform:uppercase; color:#27ae60; }
+        .integrity-dot { width:6px;height:6px;border-radius:50%;background:#27ae60; }
+        .bopc-tag { font-family:'DM Mono',monospace; font-size:9px; color:#555; letter-spacing:.1em; }
+        .hl { color:#C5A059; }
+        .hlb { color:#7fb3f5; }
+        .hlo { color:#d35400; font-weight:500; }
+        .hlg { color:#27ae60; }
+
+        .case-divider { display:flex; align-items:center; gap:16px; margin:0 0 56px; }
+        .case-divider-line { flex:1; height:1px; background:var(--border); }
+        .case-divider-text { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.15em; text-transform:uppercase; color:#333; white-space:nowrap; }
+
+        .pillars { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-bottom:40px; }
+        @media(max-width:600px) { .pillars { grid-template-columns:1fr; } }
+        .pillar { background:#181818; border:1px solid var(--border); padding:24px 20px; border-radius:2px; }
+        .pillar-icon { font-size:22px; margin-bottom:10px; }
+        .pillar-title { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.15em; text-transform:uppercase; color:#C5A059; margin-bottom:8px; }
+        .pillar-text { font-size:12px; font-weight:300; color:#666; line-height:1.65; }
+
+        .closing { border:1px solid rgba(197,160,89,0.15); border-radius:4px; padding:28px 20px; background:linear-gradient(135deg,#0d0d0d 0%,#111008 100%); display:grid; grid-template-columns:1fr; gap:24px; align-items:center; }
+        @media(min-width:640px) { .closing { grid-template-columns:1fr auto; padding:40px; gap:32px; } }
+        .closing-headline { font-family:'Bebas Neue',sans-serif; font-size:clamp(22px,3vw,32px); letter-spacing:.02em; line-height:1.2; color:#fff; }
+        .closing-headline em { font-style:normal; color:#C5A059; }
+        .closing-sub { font-size:13px; font-weight:300; color:#666; margin-top:10px; line-height:1.65; }
+        .cta-btn { display:inline-flex; align-items:center; gap:10px; background:#C5A059; color:#000; font-family:'DM Mono',monospace; font-size:11px; font-weight:500; letter-spacing:.15em; text-transform:uppercase; padding:16px 28px; border-radius:2px; text-decoration:none; white-space:nowrap; transition:background 0.2s; }
+        .cta-btn:hover { background:#d6b46a; }
+
+        .section-ad .ad-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 16px;
+        }
+        @media(min-width:640px) { .section-ad .ad-inner { padding: 100px 24px; } }
+        .fade-up { opacity:0; transform:translateY(20px); animation: adFadeUp 0.65s ease forwards; }
+        .d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.25s}.d4{animation-delay:.35s}
+        .d5{animation-delay:.5s}.d6{animation-delay:.65s}.d7{animation-delay:.75s}
+        @keyframes adFadeUp { to { opacity:1; transform:translateY(0); } }
+
+        /* ── SCROLL REVEAL (generic) ── */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
+    </style>
 </head>
 <body>
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TDL8RGGV"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <div class="alert-bar">
-        <p>⚠️ ALERTA: LEI 14.967/2024 — A RESPONSABILIDADE AGORA É SOLIDÁRIA (EMPRESA E CONTRATANTE).</p>
+
+<!-- ══════════════════════════════════════
+     FLOATING CTA BAR
+══════════════════════════════════════ -->
+<div class="floating-cta" id="floatingCta">
+    <span class="floating-cta-text"><strong>Pronto para ver ao vivo?</strong> Agende uma demonstração.</span>
+    <button class="floating-cta-btn" onclick="scrollToContact()">Solicitar Demo →</button>
+</div>
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<header class="hero px-4 md:px-6">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-glow"></div>
+
+    <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center py-20 lg:py-0">
+        <div class="z-10">
+            <div class="pioneer-badge">
+                <div class="dot"></div>
+                Primeira plataforma nativa à Lei 14.967/24
+            </div>
+
+            <h1 class="font-display text-5xl sm:text-7xl lg:text-8xl leading-none mb-6 uppercase">
+                Conformidade<br>
+                não é custo.<br>
+                <span style="color: var(--red);">Multa de<br>R$ 90 mil</span><br>
+                <span style="color: var(--green);">é.</span>
+            </h1>
+
+            <p class="text-zinc-400 text-base md:text-lg leading-relaxed mb-4 max-w-lg">
+                A Lei 14.967/24 e a ISO 18788 transformaram a governança da segurança privada no Brasil. A ATIV é a plataforma construída para esse novo cenário.
+            </p>
+
+            <div class="flex items-center gap-3 mb-8">
+                <div class="law-stamp">⚖ Lei 14.967/24</div>
+                <div class="law-stamp">🔒 ISO 18788</div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row flex-wrap gap-4">
+                <button class="btn-primary" onclick="scrollToContact()">
+                    Solicitar Demonstração →
+                </button>
+                <button class="btn-ghost" onclick="document.getElementById('section-storytelling').scrollIntoView({behavior:'smooth'})">
+                    Ver a plataforma ↓
+                </button>
+            </div>
+        </div>
+
+        <div class="relative flex justify-center items-center z-10">
+            <div class="hero-scanner rounded-xl overflow-hidden border border-zinc-800 shadow-2xl" style="box-shadow: 0 0 80px rgba(34,197,94,0.06);">
+                <img src="https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/Captura%20de%20tela%202026-03-03%20013855.png"
+                    class="w-full max-w-lg opacity-90 lg:-rotate-1 transition-transform duration-700 hover:rotate-0">
+            </div>
+            <!-- Floating data chip -->
+            <div style="position:absolute; bottom:-16px; right:0; background:#111; border:1px solid rgba(34,197,94,0.25); border-radius:8px; padding:10px 14px; display:flex; align-items:center; gap:10px; z-index:20;">
+                <div style="width:8px;height:8px;border-radius:50%;background:var(--green);animation:pioneerPulse 2s infinite;flex-shrink:0;"></div>
+                <span style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;color:#aaa;white-space:nowrap;">MONITORAMENTO <span style="color:var(--green);">ATIVO</span></span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ══════════════════════════════════════
+     TYPEWRITER
+══════════════════════════════════════ -->
+<section class="typewriter-section">
+    <p class="font-mono text-xs tracking-widest text-zinc-600 uppercase mb-4">O sistema monitora</p>
+    <h2 class="font-display text-white" style="font-size:clamp(1.8rem, 8vw, 4.5rem); line-height:1.1;">
+        <span id="typewriter" style="color:var(--orange)"></span><span class="cursor"></span>
+    </h2>
+    <p class="text-zinc-600 text-sm mt-4 font-mono tracking-widest uppercase">em tempo real</p>
+</section>
+
+<!-- ══════════════════════════════════════
+     STORYTELLING / PATH
+══════════════════════════════════════ -->
+<section class="relative bg-black pb-48 px-4" id="section-storytelling">
+    <div class="path-line">
+        <div id="path-progress" class="path-progress"></div>
     </div>
 
-    <header id="navbar">
-        <div class="container nav-container">
-            <div class="logo">
-                <img src="images/logo_ativ.png" alt="ATIV Brasil Logo" class="logo-img">
-            </div>
-            <nav class="desktop-nav">
-                <a href="#inicio">Início</a>
-                <a href="#realidade">A Nova Lei</a>
-                <a href="#ecossistema">O Ecossistema</a>
-                <a href="#comercial">Diferenciação</a>
-                <a href="#contato" class="btn btn-sm">Diagnóstico</a>
-            </nav>
-            <button class="mobile-toggle" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-        <div class="mobile-menu">
-            <a href="#inicio">Início</a>
-            <a href="#realidade">A Nova Lei</a>
-            <a href="#ecossistema">O Ecossistema</a>
-            <a href="#comercial">Diferenciação</a>
-            <a href="#contato">Diagnóstico</a>
-        </div>
-    </header>
+    <div class="max-w-7xl mx-auto px-4 md:px-6 relative z-10 space-y-48">
 
-    <main>
-        <section id="inicio" class="hero">
-            <div class="hero-overlay"></div>
-            <div class="container hero-content">
-                <span class="badge">Posicionamento Estratégico</span>
-                <h1>
-                <h1><span class="text-accent">LIVRO DE OCORRÊNCIA DIGITAL</span><br>PROVA DEFENSÁVEL OU RISCO PENAL?</h1>
-                <p class="hero-sub">A nova Lei nº 14.967/2024 transformou registro operacional em prova jurídica. Sem padronização auditável, o que deveria proteger pode expor sua empresa e seu cliente.</p>
-                
-                <div class="cta-group">
-                    <a href="#contato" class="btn btn-primary">Solicitar Diagnóstico de Conformidade</a>
-                    <a href="#realidade" class="btn btn-outline">Entender o Risco</a>
+        <div class="reveal-item grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center pt-12" id="item-exposition">
+            <div class="text-center lg:text-left">
+                <div class="alert-bubble mb-6"><span style="color:var(--red)">⚠</span> Alertas de Efetivo Irregular</div>
+                <p class="text-zinc-400 text-lg md:text-xl leading-relaxed mb-6">
+                    O sistema emite <span class="text-white font-bold">alertas automáticos</span> quando um operador escalado em um posto possui documentação vencida. O painel de comando exibe o número de postos com alertas e o total de documentos irregulares, com indicação do nível de risco (crítico, alto ou moderado).
+                </p>
+            </div>
+            <div class="relative group">
+                <div class="image-border-wrapper rounded-xl overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/postosmonitorados.png"
+                        class="rounded-lg shadow-2xl border border-zinc-800 w-full opacity-90 relative z-10">
                 </div>
-            </div>
-        </section>
-
-        <section id="realidade" class="section">
-            <div class="container">
-                <div class="grid-2">
-                    <div class="text-block">
-                        <h2 class="section-title">Sistema de rondas para vigilantes e <span class="text-accent">livro de ocorrência digital</span> são o começo — não garantem blindagem jurídica</h2>
-                        <p>A Lei nº 14.967/2024 encerrou definitivamente o ciclo da informalidade disfarçada. Segurança privada deixou de ser apenas serviço; tornou-se responsabilidade jurídica compartilhada.</p>
-                        <p>Hoje existem apenas dois tipos de empresas:</p>
-                        <ul class="check-list">
-                            <li>As que operam com <strong>provas auditáveis</strong> e controle de risco.</li>
-                            <li>As que acreditam que "certificado" basta e estão juridicamente <strong>expostas</strong>.</li>
-                        </ul>
-                    </div>
-                    <div class="card warning-card">
-                        <h3>O Custo da Inação</h3>
-                        <div class="cost-grid">
-                            <div class="cost-item">
-                                <h4>Para a Empresa</h4>
-                                <p>Multas cumulativas e risco de perda de alvará.</p>
-                            </div>
-                            <div class="cost-item">
-                                <h4>Para o Gestor</h4>
-                                <p>Responsabilização criminal por omissão ou negligência.</p>
-                            </div>
-                            <div class="cost-item">
-                                <h4>Para o Cliente</h4>
-                                <p>Responsabilidade solidária por falhas da contratada.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section bg-darker">
-            <div class="container">
-                <div class="section-header center">
-                    <h2>O que a ATIV Brasil <span class="text-accent">É</span> (E o que não é)</h2>
-                </div>
-                <div class="grid-2 compare-grid">
-                    <div class="card card-red-border">
-                        <h3>❌ O que NÃO somos</h3>
-                        <ul class="cross-list">
-                            <li>Uma escola de formação tradicional.</li>
-                            <li>Uma vendedora de cursos genéricos.</li>
-                            <li>Uma plataforma educacional passiva.</li>
-                            <li>Um software isolado sem metodologia.</li>
-                        </ul>
-                    </div>
-                    <div class="card card-green-border">
-                        <h3>✅ O que SOMOS</h3>
-                        <ul class="check-list">
-                            <li>Um Ecossistema de Conformidade Operacional.</li>
-                            <li>Uma ferramenta de Blindagem Jurídica.</li>
-                            <li>Geradores de provas auditáveis de diligência.</li>
-                            <li>Diferenciação competitiva para contratos premium.</li>
-                        </ul>
-                    </div>
-                </div>
-                <blockquote class="command-line">
-                    "A ATIV não ensina por ensinar. Ela documenta, controla, prova e sustenta."
-                </blockquote>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <div class="grid-2 align-center">
-                    <div>
-                        <h2 class="section-title">ISO 18788: o padrão internacional que transforma vigilância em sistema de gestão</h2>
-                        <p>A ISO 18788 não trata de treinamento isolado nem de certificação simbólica. Ela exige um sistema de gestão estruturado, com controle documentado, rastreabilidade e governança baseada em risco.</p>
-                        <p>Aplicada à segurança privada, isso significa que cada decisão operacional precisa ser:</p>
-
-                        <div class="tags-container">
-                            <span class="tag">Registrada</span>
-                            <span class="tag">Rastreável</span>
-                            <span class="tag">Defensável</span>
-                            <span class="tag">Auditável</span>
-                        </div>
-                    </div>
-                    <div class="card highlight-card">
-                        <h3>Você não vende horas.</h3>
-                        <p>Empresas com o selo ATIV vendem:</p>
-                        <ul>
-                            <li>Previsibilidade Jurídica</li>
-                            <li>Controle de Risco</li>
-                            <li>Tranquilidade Institucional</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="ecossistema" class="section bg-darker">
-            <div class="container">
-                <h2 class="section-title center">Não é apenas um aplicativo de vigilante — é um ecossistema de governança, controle e prova auditável</h2>
-                <div class="grid-3">
-                    <div class="feature-card">
-                        <div class="card-image" style="background-image: url('https://raw.githubusercontent.com/ATIVBRASIL/ativbrasil.com.br/refs/heads/main/images/reescritaia2.png');"></div>
-                        <div class="card-content">
-                            <h3>01. ATIV Agente IA</h3>
-                            <p class="subtitle">Registro, Prova e Defesa</p>
-                            <p>Transforma relatos operacionais em documentos técnicos jurídicos. Cria um log imutável que serve como prova preventiva.</p>
-                            <ul class="mini-list">
-                                <li>Relato bruto preservado</li>
-                                <li>Refinamento técnico jurídico</li>
-                                <li>Log de auditoria</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="feature-card">
-                        <div class="card-image" style="background-image: url('https://raw.githubusercontent.com/ATIVBRASIL/ativbrasil.com.br/refs/heads/main/images/arsenal3.png');"></div>
-                        <div class="card-content">
-                            <h3>02. Arsenal ATIV</h3>
-                            <p class="subtitle">Controle de Risco Humano</p>
-                            <p>Capacitação sem controle é ilusão. Identificamos operadores de elite e detectamos riscos antes que virem incidentes.</p>
-                            <ul class="mini-list">
-                                <li>Ranking de excelência</li>
-                                <li>Radar de risco humano</li>
-                                <li>Meritocracia por dados</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="feature-card">
-                        <div class="card-image" style="background-image: url('https://raw.githubusercontent.com/ATIVBRASIL/ativbrasil.com.br/refs/heads/main/images/presencial1.png');"></div>
-                        <div class="card-content">
-                            <h3>03. ATIV Treinamentos</h3>
-                            <p class="subtitle">Padronização de Elite</p>
-                            <p>Não é sobre "aprender a atirar". É sobre engenharia da proporcionalidade e tomada de decisão sob pressão extrema.</p>
-                            <ul class="mini-list">
-                                <li>Psicologia do combate</li>
-                                <li>Guerra narrativa defensiva</li>
-                                <li>Operador preciso e controlado</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="comercial" class="section">
-            <div class="container">
-                <div class="commercial-box">
-                    <h2>Por que isso muda o jogo comercial?</h2>
-                    <h3>Quem compete por preço vende risco. Quem opera com ATIV vende <span class="text-accent">confiança</span>.</h3>
-                    <div class="grid-4 mt-2">
-                        <div class="stat-item">
-                            <span class="icon">💰</span>
-                            <h4>Ticket Médio</h4>
-                            <p>Justifique valores mais altos saindo da guerra de centavos.</p>
-                        </div>
-                        <div class="stat-item">
-                            <span class="icon">💎</span>
-                            <h4>Clientes Premium</h4>
-                            <p>Acesse contratantes que exigem compliance real.</p>
-                        </div>
-                        <div class="stat-item">
-                            <span class="icon">📉</span>
-                            <h4>Redução de Churn</h4>
-                            <p>Cliente seguro não troca de fornecedor por mixaria.</p>
-                        </div>
-                        <div class="stat-item">
-                            <span class="icon">🛡️</span>
-                            <h4>Menos Passivo</h4>
-                            <p>Reduza custos com processos trabalhistas e cíveis.</p>
-                        </div>
-                    </div>
-                    <p class="alert-text mt-2">"Pagar barato em segurança privada deixou de ser economia. Virou assunção consciente de risco."</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section bg-darker">
-            <div class="container">
-                <div class="grid-2">
-                    <div class="legal-content">
-                        <h2 class="section-title">O Escudo Legal</h2>
-                        <p>A Lei nº 14.967/2024 e as novas Portarias da PF não sugerem, elas <strong>exigem</strong>.</p>
-                        <p>A ATIV não interpreta a lei. Nós operacionalizamos a conformidade para que sua empresa não seja pega na "zona cinzenta".</p>
-                    </div>
-                    <div class="legal-list">
-                        <ul>
-                            <li><span>⚖️</span> Responsabilidade solidária do contratante</li>
-                            <li><span>🚫</span> Tipificação criminal para exercício irregular</li>
-                            <li><span>💲</span> Multas elevadas e cumulativas</li>
-                            <li><span>📝</span> Exigência absoluta de registros auditáveis</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section manifesto-section">
-            <div class="container text-center">
-                <h2>A Verdade Incômoda</h2>
-                <div class="manifesto-text">
-                    <p>Treinar sem documentar não protege.</p>
-                    <p>Certificar sem rastrear não blinda.</p>
-                    <p>Operar sem prova é <span class="text-accent">apostar a empresa</span>.</p>
-                </div>
-                <p class="mt-2">No novo mercado, excelência não é opcional. É sobrevivência.</p>
-            </div>
-        </section>
-
-        <section id="contato" class="section">
-            <div class="container">
-                <div class="form-wrapper">
-                    <div class="form-header">
-                        <h2>Solicite Laudo Preliminar de Conformidade</h2>
-                        <p>Uma identificação objetiva de riscos que podem gerar multa, processo, ou responsabilização criminal.</p>
-                    </div>
-                    <form class="contact-form" id="diagnosis-form">
-                        <div class="input-group">
-                            <label for="nome">Nome Completo</label>
-                            <input type="text" id="nome" required placeholder="Seu nome">
-                        </div>
-                        <div class="input-group">
-                            <label for="empresa">Empresa</label>
-                            <input type="text" id="empresa" required placeholder="Nome da empresa">
-                        </div>
-                        <div class="row">
-                            <div class="input-group">
-                                <label for="email">E-mail Corporativo</label>
-                                <input type="email" id="email" required placeholder="voce@empresa.com">
-                            </div>
-                            <div class="input-group">
-                                <label for="whatsapp">WhatsApp</label>
-                                <input type="tel" id="whatsapp" required placeholder="(XX) XXXXX-XXXX">
-                            </div>
-                        </div>
-                        <div class="input-group">
-                            <label for="mensagem">Mensagem (Opcional)</label>
-                            <textarea id="mensagem" rows="3" placeholder="Descreva brevemente sua necessidade atual..."></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary full-width">Solicitar Diagnóstico</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer>
-        <div class="container footer-content">
-            <div class="footer-logo">
-                <h3>ATIV BRASIL</h3>
-                <p>Conformidade não é custo. É estratégia de elite.</p>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2026 ATIV Brasil. Todos os direitos reservados.</p>
+                <div class="connector-junction"></div>
+                <div class="connector-segment"></div>
             </div>
         </div>
-    </footer>
 
-    <script src="script.js"></script>
+        <div class="reveal-item inverted grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center" id="item-maturity">
+            <div class="lg:order-2 text-center lg:text-right">
+                <div class="alert-bubble mb-6 lg:ml-auto"><span style="color:#3b82f6">🛡</span> Painel de Maturidade PDCA</div>
+                <p class="text-zinc-400 text-lg md:text-xl leading-relaxed mb-6">
+                    O sistema calcula e exibe o <span class="text-white font-bold">índice de maturidade</span> da empresa em relação às normas, tornando-a elegível ao <span class="text-white font-bold">Selo ISO 18788</span>.
+                </p>
+            </div>
+            <div class="lg:order-1 relative group">
+                <div class="image-border-wrapper rounded-xl overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/gaps_pdca.png"
+                        class="rounded-lg shadow-2xl border border-zinc-800 w-full opacity-90 relative z-10">
+                </div>
+                <div class="connector-junction"></div>
+                <div class="connector-segment"></div>
+            </div>
+        </div>
+
+        <div class="reveal-item grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center" id="item-acervo">
+            <div class="text-center lg:text-left">
+                <div class="alert-bubble mb-6"><span style="color:var(--orange)">🔫</span> Alocação de Operadores</div>
+                <p class="text-zinc-400 text-lg md:text-xl leading-relaxed mb-6">
+                    A plataforma permite escalar e liberar operadores para postos de trabalho. Visualize quem está alocado em cada posto, quem está disponível e gerencie a distribuição do efetivo em tempo real.
+                </p>
+            </div>
+            <div class="relative group">
+                <div class="image-border-wrapper rounded-xl overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/escala2.png"
+                        class="rounded-lg shadow-2xl border border-zinc-800 w-full opacity-90 relative z-10">
+                </div>
+                <div class="connector-junction"></div>
+                <div class="connector-segment"></div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     GESTÃO DE RISCOS
+══════════════════════════════════════ -->
+<section class="section-platform py-16 md:py-24 px-4 md:px-6" id="section-riscos">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="font-display text-5xl md:text-6xl text-white text-center mb-3 tracking-wide leading-tight">
+            Gestão de Riscos por Posto
+        </h2>
+        <p class="font-mono text-xs text-zinc-600 tracking-widest uppercase text-center mb-12">ISO 18788 · Lei 14.967/24</p>
+
+        <div class="bg-zinc-900/40 rounded-lg border border-zinc-800 overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center p-6 md:p-10 lg:p-12">
+                <div class="order-2 lg:order-1">
+                    <p class="text-zinc-400 text-base md:text-lg leading-relaxed mb-6">
+                        Para cada posto de segurança, cadastre e gerencie uma matriz de riscos completa:
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-3 text-zinc-400 text-sm leading-relaxed">
+                            <span style="color:var(--green);flex-shrink:0;margin-top:2px;">▸</span>
+                            Categorias de risco: operacional, patrimonial, uso da força, direitos humanos, legal, reputacional, trabalhista e tecnológico.
+                        </li>
+                        <li class="flex items-start gap-3 text-zinc-400 text-sm leading-relaxed">
+                            <span style="color:var(--green);flex-shrink:0;margin-top:2px;">▸</span>
+                            Classificação automática do risco com base em probabilidade e impacto.
+                        </li>
+                        <li class="flex items-start gap-3 text-zinc-400 text-sm leading-relaxed">
+                            <span style="color:var(--green);flex-shrink:0;margin-top:2px;">▸</span>
+                            Controles de mitigação e planos de ação com responsável, prazo e status.
+                        </li>
+                        <li class="flex items-start gap-3 text-zinc-400 text-sm leading-relaxed">
+                            <span style="color:var(--green);flex-shrink:0;margin-top:2px;">▸</span>
+                            Perfil geral do posto: tipo de patrimônio, atividade, horários críticos e responsável técnico.
+                        </li>
+                    </ul>
+                </div>
+                <div class="order-1 lg:order-2">
+                    <div class="rounded-xl overflow-hidden border border-zinc-700/50 shadow-2xl">
+                        <img src="https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/gerenciamentorisco%20(1).png"
+                            alt="Gestão de riscos" class="w-full h-auto object-cover opacity-95">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     AGENTE IA — GALERIA
+══════════════════════════════════════ -->
+<section class="section-gallery py-16 md:py-24 px-4 md:px-6" id="section-galeria">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="font-display text-5xl md:text-6xl text-white text-center mb-3 tracking-wide leading-tight">
+            Agente de Inteligência Artificial
+        </h2>
+        <p class="font-mono text-xs text-zinc-600 tracking-widest uppercase text-center mb-8">Aprimoramento de Relatórios de Ocorrência</p>
+
+        <div class="max-w-3xl mx-auto text-center mb-12 space-y-3">
+            <p class="text-zinc-400 text-base md:text-lg leading-relaxed">O operador relata o ocorrido em linguagem simples. O Agente IA ATIV converte em relatório técnico estruturado, juridicamente defensável e pronto para auditorias.</p>
+            <p class="text-zinc-200 font-medium text-base">Prova documentada, rastreável e supervisionada em tempo real.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            <article class="gallery-card">
+                <img src="https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/agenteia1.png" alt="Agente IA 1">
+                <div class="gallery-desc">
+                    <p class="line1">O vigilante escolhe o nível de uso da força</p>
+                    <p class="line2">O ATIV ajusta automaticamente a estrutura e o padrão técnico do relatório.</p>
+                </div>
+            </article>
+            <article class="gallery-card">
+                <img src="https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/agenteia2.png" alt="Agente IA 2">
+                <div class="gallery-desc">
+                    <p class="line1">Escreve ou usa a voz</p>
+                    <p class="line2">O vigilante descreve os fatos como presenciou — digitando ou por voz — em linguagem simples e natural.</p>
+                </div>
+            </article>
+            <article class="gallery-card">
+                <img src="https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/agenteia3.png" alt="Agente IA 3">
+                <div class="gallery-desc">
+                    <p class="line1">O Agente IA ATIV analisa e estrutura</p>
+                    <p class="line2">Converte a fala simples em relatório técnico alinhado à legislação, com padrão institucional e segurança jurídica.</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     ANTES E DEPOIS
+══════════════════════════════════════ -->
+<section class="section-ad" id="antes-depois">
+    <div class="ad-inner">
+
+        <div class="fade-up d1" style="display:flex;align-items:center;gap:12px;margin-bottom:28px;">
+            <div style="width:32px;height:1px;background:#C5A059;"></div>
+            <span style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#C5A059;">Agente IA ATIV · Escrita Tática</span>
+        </div>
+
+        <h2 class="font-display fade-up d2" style="font-size:clamp(38px,6vw,72px);line-height:1.0;color:#fff;max-width:820px;margin-bottom:16px;letter-spacing:.01em;">
+            O seu vigilante sempre soube o que aconteceu.<br>
+            <em style="font-style:normal;color:#C5A059;">Agora ele consegue provar.</em>
+        </h2>
+        <p class="fade-up d3" style="font-size:15px;font-weight:300;color:#666;max-width:560px;line-height:1.75;margin-bottom:72px;">
+            Do registro cotidiano ao documento de defesa legal — o Agente IA da ATIV Brasil adapta o nível de profundidade à gravidade de cada ocorrência.
+        </p>
+
+        <!-- Case 1 -->
+        <div class="fade-up d4" style="margin-bottom:56px;">
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
+                <div class="case-badge level-low"><div class="badge-dot"></div>Nível 1 — Registro de Rotina</div>
+                <span style="font-family:'DM Mono',monospace;font-size:11px;color:#555;letter-spacing:.1em;text-transform:uppercase;">Ocorrência cotidiana · Modo Administrativo</span>
+            </div>
+            <div class="comparison">
+                <div class="raw-col">
+                    <div class="col-label raw"><div class="col-dot"></div>Relato bruto</div>
+                    <div class="raw-text">"Fui até a casa 230 falar com a moradora sobre o cachorro solto. Ela disse que o cachorro escapou e que não é costume. A moradora da 298 mandou foto de cocô no jardim dizendo que é do cachorro dela. Orientei e comuniquei a administração."</div>
+                    <div class="verdict"><span>✗</span><div><strong>Vulnerável</strong>Sem estrutura, sem distinção entre fato e versão de terceiro. Em uma contestação, esse documento não protege ninguém.</div></div>
+                </div>
+                <div class="refined-col">
+                    <div class="col-label refined"><div class="col-dot"></div>Agente IA · ATIV Brasil</div>
+                    <div class="report-header">
+                        <div class="report-title">Relatório de Ocorrência Operacional</div>
+                        <div class="report-meta">
+                            <div class="meta-item">DATA/HORA: <span>10h15</span></div>
+                            <div class="meta-item">LOCAL: <span>Rua Victória, 230/298 — Cond. Montreal</span></div>
+                            <div class="meta-item">NATUREZA: <span>Descumprimento de normas sobre animais</span></div>
+                        </div>
+                    </div>
+                    <div class="report-section">
+                        <div class="section-number"><span class="snb snb-facts">1</span><span class="sn-label">Histórico dos Fatos</span></div>
+                        <div class="section-body">Fui acionado via WhatsApp às <span class="hl">10h15</span> pela <span class="hl">Sra. Andreia, Rua Victória, 298</span>. <span class="hlb">Segundo a solicitante</span>, o animal teria defecado em seu jardim. Desloquei-me até a residência 230 e <span class="hl">não constatei a presença do cão na via</span>. A proprietária, <span class="hl">Sra. Márcia</span>, <span class="hlb">declarou</span> que o animal havia escapado acidentalmente. <span class="hl">Não houve constatação direta do ato pelo vigilante.</span></div>
+                    </div>
+                    <div class="report-section">
+                        <div class="section-number"><span class="snb snb-outcome">2</span><span class="sn-label">Desfecho</span></div>
+                        <div class="section-body">A Sra. Márcia foi orientada quanto às <span class="hl">normas do condomínio</span>. A administração foi comunicada para registro e providências. Atendimento encerrado.</div>
+                    </div>
+                    <div class="report-footer">
+                        <div class="integrity-badge"><div class="integrity-dot"></div>Integridade verificada</div>
+                        <div class="bopc-tag">Modo: Registro Administrativo</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="case-divider fade-up d5">
+            <div class="case-divider-line"></div>
+            <span class="case-divider-text">Quando a gravidade aumenta, o Agente ATIV vai mais fundo</span>
+            <div class="case-divider-line"></div>
+        </div>
+
+        <!-- Case 2 -->
+        <div class="fade-up d5" style="margin-bottom:56px;">
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
+                <div class="case-badge level-high"><div class="badge-dot pulse"></div>Nível 3 — Técnicas Não Letais</div>
+                <span style="font-family:'DM Mono',monospace;font-size:11px;color:#555;letter-spacing:.1em;text-transform:uppercase;">Uso da força · Modo Narrativa de Defesa</span>
+            </div>
+            <div class="comparison">
+                <div class="raw-col">
+                    <div class="col-label raw"><div class="col-dot"></div>Relato bruto</div>
+                    <div class="raw-text">"Durante minha ronda, constatei uma discussão de casal no meio da rua, por volta das 02h34min. O homem discutia violentamente com sua esposa e com o sogro, um idoso de aproximadamente 75 anos. O Sr Paulo ignorou a minha presença, apliquei a intervenção, quando ele empurrou o idoso e desferiu um tapa na Sra Maria. Momento que parti pra cima dele e desferi um soco no nariz, ele veio a cair e a sangrar. Imobilizei o Sr Paulo e pedi para acionar as autoridades. Viatura GCM 234 compareceu, algemou o Sr Paulo. BOPC nº 234/26."</div>
+                    <div class="verdict"><span>✗</span><div><strong>Expõe o vigilante, a empresa e o contratante</strong>"Parti pra cima dele e desferi um soco" — sem estrutura de defesa, essa frase isola a ação e a torna indefensável.</div></div>
+                </div>
+                <div class="refined-col">
+                    <div class="col-label refined"><div class="col-dot"></div>Agente IA · ATIV Brasil</div>
+                    <div class="report-header">
+                        <div class="report-title">Relatório de Ocorrência Operacional</div>
+                        <div class="report-meta">
+                            <div class="meta-item">DATA/HORA: <span>02h34 — Cond. Montreal</span></div>
+                            <div class="meta-item">LOCAL: <span>Rua Victória, 234</span></div>
+                            <div class="meta-item">NATUREZA: <span>Vias de fato / Agressão física</span></div>
+                        </div>
+                    </div>
+                    <div class="report-section">
+                        <div class="section-number"><span class="snb snb-facts">1</span><span class="sn-label">Histórico dos Fatos</span></div>
+                        <div class="section-body">Constatei discussão de alta intensidade em frente ao imóvel 234. O <span class="hl">Sr. Paulo Silva</span> mantinha tom exaltado direcionado à <span class="hl">Sra. Maria</span> e ao sogro, <span class="hlo">idoso de aproximadamente 75 anos</span>. Realizei abordagem verbal — <span class="hlb">ignorada pelo indivíduo</span> — momento em que o Sr. Paulo empurrou o idoso e desferiu um tapa na Sra. Maria.</div>
+                    </div>
+                    <div class="report-section">
+                        <div class="section-number"><span class="snb snb-tactical">2</span><span class="sn-label">Da Intervenção e Uso Progressivo da Força</span></div>
+                        <div class="section-body"><span class="hlo">NECESSIDADE:</span> Agressão física em curso contra duas vítimas, sendo uma pessoa idosa — risco iminente.<br><br><span class="hlo">PROPORCIONALIDADE:</span> Após esgotamento da tentativa verbal, apliquei golpe direto ao rosto. <span class="hlb">Não houve força adicional após a queda.</span><br><br><span class="hlo">ADEQUAÇÃO:</span> Procedi à imobilização imediata, preservando as vítimas e contendo a escalada.</div>
+                    </div>
+                    <div class="report-section">
+                        <div class="section-number"><span class="snb snb-outcome">3</span><span class="sn-label">Desfecho</span></div>
+                        <div class="section-body">Acionei a <span class="hl">GCM — viatura 234</span>. Foi lavrado o <span class="hlg">BOPC nº 234/26</span>. Supervisor <span class="hl">Sr. Nícolas</span> compareceu e acompanhou os procedimentos.</div>
+                    </div>
+                    <div class="report-section">
+                        <div class="section-number"><span class="snb snb-terms">4</span><span class="sn-label">Termos Técnicos</span></div>
+                        <ul class="terms-list">
+                            <li><strong>Intervenção tática</strong> — Ação controlada para cessar situação de risco iminente.</li>
+                            <li><strong>Uso progressivo da força</strong> — Níveis crescentes conforme resistência do indivíduo.</li>
+                            <li><strong>Imobilização</strong> — Contenção física para garantir segurança de terceiros.</li>
+                        </ul>
+                    </div>
+                    <div class="report-footer">
+                        <div class="integrity-badge"><div class="integrity-dot"></div>Integridade verificada</div>
+                        <div class="bopc-tag">BOPC Nº 234/26 · Modo: Narrativa de Defesa</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pillars fade-up d6">
+            <div class="pillar"><div class="pillar-icon">⚖️</div><div class="pillar-title">Necessidade</div><div class="pillar-text">A IA reconstrói a cadeia de eventos que tornou cada ação inevitável — protegendo o vigilante de acusações de conduta antecipada.</div></div>
+            <div class="pillar"><div class="pillar-icon">🎯</div><div class="pillar-title">Proporcionalidade</div><div class="pillar-text">Cada nível de força é justificado em relação à ameaça enfrentada. O documento demonstra técnica e controle.</div></div>
+            <div class="pillar"><div class="pillar-icon">🛡️</div><div class="pillar-title">Adequação</div><div class="pillar-text">Do registro simples ao documento de defesa completo — o Agente ATIV adapta automaticamente ao nível de gravidade.</div></div>
+        </div>
+
+        <!-- CTA pós-convicção -->
+        <div class="closing fade-up d7" id="cta-pos-convicao">
+            <div>
+                <div class="closing-headline">O mesmo vigilante. O mesmo fato.<br><em>A diferença está no documento.</em></div>
+                <p class="closing-sub">A ATIV Brasil transforma o relato de campo em registro profissional — automaticamente, em segundos, usando as regras específicas do seu contrato.</p>
+            </div>
+            <a href="#contato" class="cta-btn" onclick="scrollToContact(); return false;">Solicitar Demonstração →</a>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     HIERARQUIA DE ACESSO  ← NOVA SEÇÃO
+══════════════════════════════════════ -->
+<section class="section-hierarchy py-20 md:py-32 px-4 md:px-6" id="section-hierarquia">
+    <div class="max-w-6xl mx-auto">
+
+        <!-- Header -->
+        <div class="text-center mb-4 scroll-reveal">
+            <span class="font-mono text-xs tracking-widest text-zinc-600 uppercase">Controle de Acesso · Plataforma ATIV</span>
+        </div>
+        <h2 class="font-display text-5xl md:text-6xl text-white text-center mb-4 tracking-wide leading-tight scroll-reveal">
+            Cada nível vê o que precisa ver.<br>
+            <span style="color:var(--green)">Nada além disso.</span>
+        </h2>
+        <p class="text-zinc-500 text-base md:text-lg text-center max-w-2xl mx-auto mb-16 leading-relaxed scroll-reveal">
+            Hierarquia de acesso por função — do campo à diretoria — com rastreabilidade total de cada ação dentro da plataforma.
+        </p>
+
+        <!-- Cards grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-6 scroll-reveal">
+
+            <!-- ATIV Plataforma -->
+            <div class="hierarchy-card" style="border-color: rgba(197,160,89,0.2);">
+                <div class="hcard-top">
+                    <div class="hcard-icon" style="background:rgba(197,160,89,0.1);">👑</div>
+                    <span class="hcard-level" style="background:rgba(197,160,89,0.08);color:#C5A059;border:1px solid rgba(197,160,89,0.2);">Nível 0</span>
+                </div>
+                <div class="hcard-title">ATIV Plataforma</div>
+                <div class="hcard-desc">Acesso total a todas as empresas clientes. Exclusivo à operação interna da ATIV Brasil.</div>
+                <div class="hcard-permissions">
+                    <span class="perm-tag yes">Todas as empresas</span>
+                    <span class="perm-tag yes">Configuração global</span>
+                    <span class="perm-tag yes">Logs completos</span>
+                </div>
+            </div>
+
+            <!-- Comando -->
+            <div class="hierarchy-card" style="border-color: rgba(239,68,68,0.15);">
+                <div class="hcard-top">
+                    <div class="hcard-icon" style="background:rgba(239,68,68,0.08);">🎖️</div>
+                    <span class="hcard-level" style="background:rgba(239,68,68,0.07);color:#ef4444;border:1px solid rgba(239,68,68,0.2);">Nível 1</span>
+                </div>
+                <div class="hcard-title">Comando da Empresa</div>
+                <div class="hcard-desc">Acesso completo à própria empresa, incluindo dashboard estratégico e relatórios gerenciais.</div>
+                <div class="hcard-permissions">
+                    <span class="perm-tag yes">Dashboard estratégico</span>
+                    <span class="perm-tag yes">Gestão de membros</span>
+                    <span class="perm-tag yes">Relatórios completos</span>
+                </div>
+            </div>
+
+            <!-- Supervisão -->
+            <div class="hierarchy-card" style="border-color: rgba(249,115,22,0.12);">
+                <div class="hcard-top">
+                    <div class="hcard-icon" style="background:rgba(249,115,22,0.08);">🔭</div>
+                    <span class="hcard-level" style="background:rgba(249,115,22,0.07);color:#f97316;border:1px solid rgba(249,115,22,0.2);">Nível 2</span>
+                </div>
+                <div class="hcard-title">Supervisão</div>
+                <div class="hcard-desc">Acesso ao painel tático. Pode monitorar e acompanhar operações, sem permissão para incluir ou excluir membros.</div>
+                <div class="hcard-permissions">
+                    <span class="perm-tag yes">Painel tático</span>
+                    <span class="perm-tag yes">Acompanhamento</span>
+                    <span class="perm-tag">Sem gestão de membros</span>
+                </div>
+            </div>
+
+            <!-- Operador de Campo -->
+            <div class="hierarchy-card">
+                <div class="hcard-top">
+                    <div class="hcard-icon" style="background:rgba(34,197,94,0.08);">🛡️</div>
+                    <span class="hcard-level" style="background:rgba(34,197,94,0.07);color:#22c55e;border:1px solid rgba(34,197,94,0.2);">Nível 3</span>
+                </div>
+                <div class="hcard-title">Operador de Campo</div>
+                <div class="hcard-desc">Acesso exclusivo à escrita de relatórios de ocorrência e ao diário de bordo do seu posto.</div>
+                <div class="hcard-permissions">
+                    <span class="perm-tag yes">Relatórios</span>
+                    <span class="perm-tag yes">Diário de bordo</span>
+                    <span class="perm-tag">Sem acesso tático</span>
+                </div>
+            </div>
+
+            <!-- Armeiro -->
+            <div class="hierarchy-card">
+                <div class="hcard-top">
+                    <div class="hcard-icon" style="background:rgba(59,130,246,0.08);">🔫</div>
+                    <span class="hcard-level" style="background:rgba(59,130,246,0.07);color:#60a5fa;border:1px solid rgba(59,130,246,0.2);">Nível 3</span>
+                </div>
+                <div class="hcard-title">Armeiro</div>
+                <div class="hcard-desc">Acesso restrito ao módulo de controle de materiais, armamentos e equipamentos patrimoniais.</div>
+                <div class="hcard-permissions">
+                    <span class="perm-tag yes">Controle de materiais</span>
+                    <span class="perm-tag yes">Equipamentos</span>
+                    <span class="perm-tag">Isolado das escalas</span>
+                </div>
+            </div>
+
+            <!-- Fiscal de Contrato -->
+            <div class="hierarchy-card" style="border-color: rgba(168,85,247,0.15);">
+                <div class="hcard-top">
+                    <div class="hcard-icon" style="background:rgba(168,85,247,0.08);">📋</div>
+                    <span class="hcard-level" style="background:rgba(168,85,247,0.07);color:#a855f7;border:1px solid rgba(168,85,247,0.2);">Contratante</span>
+                </div>
+                <div class="hcard-title">Fiscal de Contrato</div>
+                <div class="hcard-desc">Portal exclusivo para o contratante. Acesso somente leitura às informações do contrato — conformidade, ocorrências e escala.</div>
+                <div class="hcard-permissions">
+                    <span class="perm-tag yes">Portal do contratante</span>
+                    <span class="perm-tag yes">Somente leitura</span>
+                    <span class="perm-tag yes">Rastreável</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Liability alert — o argumento jurídico -->
+        <div class="liability-alert scroll-reveal mt-10">
+            <div class="la-eyebrow">
+                <div class="la-dot"></div>
+                Alerta Jurídico · Lei 14.967/24 — Novo Estatuto da Segurança Privada
+            </div>
+            <div class="la-title">
+                O contratante também<br>responde. Solidariamente.
+            </div>
+            <div class="la-text">
+                O Novo Estatuto da Segurança Privada estabelece que o <strong>contratante compartilha responsabilidade solidária</strong> pelos atos praticados durante a prestação do serviço. Isso significa que, na ausência de documentação adequada, <strong>uma ocorrência pode expor juridicamente não só a empresa de segurança, mas também o cliente que a contratou</strong>.
+                <br><br>
+                O portal do <strong>Fiscal de Contrato</strong> da ATIV Brasil foi criado para isso: dar ao contratante <strong>visibilidade em tempo real</strong> sobre conformidade, escala e ocorrências — e a ele própria a proteção de estar documentalmente informado.
+            </div>
+            <div class="la-law">Art. referente à responsabilidade solidária · Lei nº 14.967, de 11 de setembro de 2024</div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer class="py-12 bg-black border-t border-zinc-900 text-center text-zinc-600 text-xs px-4" id="contato">
+    <div class="max-w-2xl mx-auto mb-8">
+        <p class="font-display text-3xl text-white mb-3">Pronto para agendar uma demonstração?</p>
+        <p class="text-zinc-500 text-sm mb-6 leading-relaxed">Entre em contato e veja ao vivo como a ATIV transforma conformidade em vantagem competitiva.</p>
+        <button class="btn-primary mx-auto" style="margin:0 auto;" onclick="alert('Em breve: formulário de contato')">
+            Solicitar Demonstração →
+        </button>
+    </div>
+    <p class="mt-8">ATIV BRASIL — CNPJ: 40.678.175/0001-77. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+    // ── TYPEWRITER ──
+    const textEl = document.getElementById('typewriter');
+    const phrases = ["cada vigilante junto à PF.", "sua conformidade ISO 18788.", "sua reserva de armamentos.", "a responsabilidade solidária.", "cada posto em tempo real."];
+    let pIdx = 0, cIdx = 0, isDel = false;
+    function type() {
+        const curr = phrases[pIdx];
+        textEl.textContent = isDel ? curr.substring(0, cIdx--) : curr.substring(0, cIdx++);
+        let speed = isDel ? 40 : 90;
+        if (!isDel && cIdx === curr.length + 1) { isDel = true; speed = 2200; }
+        else if (isDel && cIdx < 0) { isDel = false; pIdx = (pIdx + 1) % phrases.length; speed = 400; cIdx = 0; }
+        setTimeout(type, speed);
+    }
+    document.addEventListener('DOMContentLoaded', type);
+
+    // ── SCROLL REVEAL (path items) ──
+    const revealItems = document.querySelectorAll('.reveal-item');
+    const progressLine = document.getElementById('path-progress');
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                const idx = Array.from(revealItems).indexOf(entry.target);
+                progressLine.style.height = ((idx + 1) / revealItems.length * 100) + '%';
+            }
+        });
+    }, { threshold: 0.3 });
+    revealItems.forEach(i => revealObserver.observe(i));
+
+    // ── SCROLL REVEAL (generic) ──
+    const genericReveals = document.querySelectorAll('.scroll-reveal');
+    const genericObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                entry.target.style.transitionDelay = (i * 0.08) + 's';
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.15 });
+    genericReveals.forEach(el => genericObserver.observe(el));
+
+    // ── FLOATING CTA ──
+    const floatingCta = document.getElementById('floatingCta');
+    const ctaTrigger = document.getElementById('cta-pos-convicao');
+    const ctaTriggerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                floatingCta.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.5 });
+    if (ctaTrigger) ctaTriggerObserver.observe(ctaTrigger);
+
+    // ── SCROLL TO CONTACT ──
+    function scrollToContact() {
+        document.getElementById('contato').scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
 </body>
 </html>
