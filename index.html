@@ -23,14 +23,37 @@
             --text: #d4d4d4;
         }
 
-        * { box-sizing: border-box; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
 
         body {
             font-family: 'DM Sans', sans-serif;
             background: #050505;
             color: var(--text);
-            overflow-x: hidden;
         }
+
+        /* Padding lateral consistente em todas as seções */
+        section, header, footer {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+        @media(min-width: 640px) {
+            section, header, footer {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+        }
+        @media(min-width: 1024px) {
+            section, header, footer {
+                padding-left: 40px;
+                padding-right: 40px;
+            }
+        }
+
+        /* Títulos responsivos globais */
+        .font-display.text-5xl { font-size: clamp(1.8rem, 6vw, 3rem); }
+        .font-display.text-6xl { font-size: clamp(2rem, 7vw, 3.75rem); }
 
         /* ── NOISE TEXTURE OVERLAY ── */
         body::before {
@@ -230,10 +253,10 @@
         }
         .floating-cta-btn:hover { background: #16a34a; }
 
-        /* ── TYPEWRITER SECTION ── */
         .typewriter-section {
             background: #050505;
-            padding: 80px 24px;
+            padding-top: 60px;
+            padding-bottom: 60px;
             text-align: center;
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
@@ -655,9 +678,10 @@
         .section-ad .ad-inner {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 60px 16px;
+            padding-top: 60px;
+            padding-bottom: 60px;
         }
-        @media(min-width:640px) { .section-ad .ad-inner { padding: 100px 24px; } }
+        @media(min-width:640px) { .section-ad .ad-inner { padding-top: 100px; padding-bottom: 100px; } }
         .fade-up { opacity:0; transform:translateY(20px); animation: adFadeUp 0.65s ease forwards; }
         .d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.25s}.d4{animation-delay:.35s}
         .d5{animation-delay:.5s}.d6{animation-delay:.65s}.d7{animation-delay:.75s}
@@ -685,7 +709,7 @@
 <!-- ══════════════════════════════════════
      HERO
 ══════════════════════════════════════ -->
-<header class="hero px-4 md:px-6">
+<header class="hero" id="hero-header">
     <div class="hero-grid-bg"></div>
     <div class="hero-glow"></div>
 
@@ -750,12 +774,12 @@
 <!-- ══════════════════════════════════════
      STORYTELLING / PATH
 ══════════════════════════════════════ -->
-<section class="relative bg-black pb-48 px-4" id="section-storytelling">
+<section class="relative bg-black pb-20 md:pb-48" id="section-storytelling">
     <div class="path-line">
         <div id="path-progress" class="path-progress"></div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-4 md:px-6 relative z-10 space-y-48">
+    <div class="max-w-7xl mx-auto relative z-10 space-y-24 md:space-y-48">
 
         <div class="reveal-item grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center pt-12" id="item-exposition">
             <div class="text-center lg:text-left">
@@ -814,7 +838,7 @@
 <!-- ══════════════════════════════════════
      GESTÃO DE RISCOS
 ══════════════════════════════════════ -->
-<section class="section-platform py-16 md:py-24 px-4 md:px-6" id="section-riscos">
+<section class="section-platform py-12 md:py-24" id="section-riscos">
     <div class="max-w-6xl mx-auto">
         <h2 class="font-display text-5xl md:text-6xl text-white text-center mb-3 tracking-wide leading-tight">
             Gestão de Riscos por Posto
@@ -860,7 +884,7 @@
 <!-- ══════════════════════════════════════
      AGENTE IA — GALERIA
 ══════════════════════════════════════ -->
-<section class="section-gallery py-16 md:py-24 px-4 md:px-6" id="section-galeria">
+<section class="section-gallery py-12 md:py-24" id="section-galeria">
     <div class="max-w-6xl mx-auto">
         <h2 class="font-display text-5xl md:text-6xl text-white text-center mb-3 tracking-wide leading-tight">
             Agente de Inteligência Artificial
@@ -1031,7 +1055,7 @@
 <!-- ══════════════════════════════════════
      HIERARQUIA DE ACESSO  ← NOVA SEÇÃO
 ══════════════════════════════════════ -->
-<section class="section-hierarchy py-20 md:py-32 px-4 md:px-6" id="section-hierarquia">
+<section class="section-hierarchy py-16 md:py-32" id="section-hierarquia">
     <div class="max-w-6xl mx-auto">
 
         <!-- Header -->
