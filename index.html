@@ -238,7 +238,7 @@
         /* ── TYPEWRITER SECTION ── */
         .typewriter-section {
             background: #050505;
-            padding: 80px 24px;
+            padding: 80px 20px;
             text-align: center;
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
@@ -641,7 +641,7 @@
 
         .case-divider { display:flex; align-items:center; gap:16px; margin:0 0 56px; }
         .case-divider-line { flex:1; height:1px; background:var(--border); }
-        .case-divider-text { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.15em; text-transform:uppercase; color:#333; white-space:nowrap; }
+        .case-divider-text { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.15em; text-transform:uppercase; color:#333; white-space:normal; text-align:center; }
 
         .pillars { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-bottom:40px; }
         @media(max-width:600px) { .pillars { grid-template-columns:1fr; } }
@@ -936,7 +936,7 @@
 
         <!-- Case 1 -->
         <div class="fade-up d4" style="margin-bottom:56px;">
-            <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin-bottom:16px;">
                 <div class="case-badge level-low"><div class="badge-dot"></div>Nível 1 — Registro de Rotina</div>
                 <span style="font-family:'DM Mono',monospace;font-size:11px;color:#555;letter-spacing:.1em;text-transform:uppercase;">Ocorrência cotidiana · Modo Administrativo</span>
             </div>
@@ -980,7 +980,7 @@
 
         <!-- Case 2 -->
         <div class="fade-up d5" style="margin-bottom:56px;">
-            <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin-bottom:16px;">
                 <div class="case-badge level-high"><div class="badge-dot pulse"></div>Nível 3 — Técnicas Não Letais</div>
                 <span style="font-family:'DM Mono',monospace;font-size:11px;color:#555;letter-spacing:.1em;text-transform:uppercase;">Uso da força · Modo Narrativa de Defesa</span>
             </div>
@@ -1252,6 +1252,7 @@
 </script>
 </body>
 </html>
+
 
 
 
