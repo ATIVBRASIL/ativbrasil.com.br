@@ -549,13 +549,15 @@
         @keyframes adPulse { 0%,100%{opacity:1}50%{opacity:.35} }
 
         .comparison {
-            display: grid;
-            grid-template-columns: 1fr 1.6fr;
-            gap: 2px;
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            overflow: hidden;
-        }
+        display: grid;
+        grid-template-columns: 1fr 1.6fr;
+        gap: 2px;
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        overflow: hidden;
+        min-width: 0;
+        word-break: break-word;
+       }
         @media(max-width:800px) { .comparison { grid-template-columns: 1fr; } }
 
         .raw-col {
@@ -652,11 +654,11 @@
         .cta-btn:hover { background:#d6b46a; }
 
         .section-ad .ad-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 60px 16px;
-        }
-        @media(min-width:640px) { .section-ad .ad-inner { padding: 100px 24px; } }
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 60px 20px;
+       }
+       @media(min-width:640px) { .section-ad .ad-inner { padding: 100px 32px; } }
         .fade-up { opacity:0; transform:translateY(20px); animation: adFadeUp 0.65s ease forwards; }
         .d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.25s}.d4{animation-delay:.35s}
         .d5{animation-delay:.5s}.d6{animation-delay:.65s}.d7{animation-delay:.75s}
@@ -695,7 +697,7 @@
 <!-- ══════════════════════════════════════
      HERO
 ══════════════════════════════════════ -->
-<header class="hero px-4 md:px-6">
+<header class="hero px-5 md:px-8">
     <div class="hero-grid-bg"></div>
     <div class="hero-glow"></div>
 
@@ -765,7 +767,7 @@
         <div id="path-progress" class="path-progress"></div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-4 md:px-6 relative z-10 space-y-48">
+    <div class="max-w-7xl mx-auto relative z-10 space-y-48">
 
         <div class="reveal-item grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center pt-12" id="item-exposition">
             <div class="text-center lg:text-left">
@@ -824,7 +826,7 @@
 <!-- ══════════════════════════════════════
      GESTÃO DE RISCOS
 ══════════════════════════════════════ -->
-<section class="section-platform py-16 md:py-24 px-4 md:px-6" id="section-riscos">
+<section class="section-platform py-16 md:py-24 px-5 md:px-8" id="section-riscos">
     <div class="max-w-6xl mx-auto">
         <h2 class="font-display text-5xl md:text-6xl text-white text-center mb-3 tracking-wide leading-tight">
             Gestão de Riscos por Posto
@@ -870,7 +872,7 @@
 <!-- ══════════════════════════════════════
      AGENTE IA — GALERIA
 ══════════════════════════════════════ -->
-<section class="section-gallery py-16 md:py-24 px-4 md:px-6" id="section-galeria">
+<section class="section-gallery py-16 md:py-24 px-5 md:px-8" id="section-galeria">
     <div class="max-w-6xl mx-auto">
         <h2 class="font-display text-5xl md:text-6xl text-white text-center mb-3 tracking-wide leading-tight">
             Agente de Inteligência Artificial
@@ -1245,3 +1247,4 @@
 </script>
 </body>
 </html>
+
