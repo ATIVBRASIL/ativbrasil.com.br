@@ -712,6 +712,12 @@
             transition: opacity 0.7s ease, transform 0.7s ease;
         }
         .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 639px) {
+    .hero-title-h1 {
+        font-size: 1.6rem !important;
+    }
+}
     </style>
 </head>
 <body>
@@ -738,7 +744,7 @@
                 Primeira plataforma nativa à Lei 14.967/24
             </div>
 
-            <h1 class="font-display leading-none mb-6 uppercase" style="font-size: clamp(1.6rem, 9vw, 7rem);">
+            <h1 class="font-display text-5xl sm:text-7xl lg:text-8xl leading-none mb-6 uppercase hero-title-h1">
                 Conformidade<br>
                 não é custo.<br>
                 <span style="color: var(--red);">Multa de<br>R$ 90 mil</span><br>
@@ -1293,5 +1299,6 @@
 </script>
 </body>
 </html>
+
 
 
