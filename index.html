@@ -509,43 +509,69 @@
             letter-spacing: 0.12em;
             color: rgba(239,68,68,0.6);
         }
-        .la-transp-strip {
-            margin-top: 22px;
-            padding-top: 18px;
-            border-top: 1px solid rgba(34,197,94,0.15);
+        .la-list {
+            list-style: none;
+            padding: 0;
+            margin: 14px 0 0 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
-        .la-transp-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            font-family: 'DM Mono', monospace;
-            font-size: 9px;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: var(--green);
-            margin-bottom: 8px;
-        }
-        .la-transp-badge::before {
-            content: '';
-            width: 6px; height: 6px;
-            border-radius: 50%;
-            background: var(--green);
-            flex-shrink: 0;
-        }
-        .la-transp-title {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(16px, 2.2vw, 22px);
-            color: #fff;
-            line-height: 1.2;
-            margin-bottom: 8px;
-        }
-        .la-transp-text {
+        .la-list li {
             font-size: 13px;
             font-weight: 300;
-            color: #777;
-            line-height: 1.8;
+            color: #888;
+            line-height: 1.6;
+            padding-left: 16px;
+            position: relative;
         }
-        .la-transp-text strong { color: #aaa; font-weight: 500; }
+        .la-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--red);
+        }
+        .la-amplifiers {
+            margin-top: 24px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+        @media(min-width:640px) { .la-amplifiers { grid-template-columns: repeat(3,1fr); } }
+        .la-amp-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 4px;
+            padding: 16px;
+        }
+        .la-amp-icon {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        .la-amp-title {
+            font-family: 'DM Mono', monospace;
+            font-size: 9px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #ccc;
+            margin-bottom: 6px;
+        }
+        .la-amp-desc {
+            font-size: 12px;
+            font-weight: 300;
+            color: #666;
+            line-height: 1.65;
+        }
+        .la-closing {
+            margin-top: 22px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(239,68,68,0.12);
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(14px, 2vw, 18px);
+            color: rgba(239,68,68,0.75);
+            letter-spacing: 0.03em;
+            line-height: 1.4;
+        }
 
         /* ── PLATFORM SECTION ── */
         .section-platform { background: #0a0a0a; }
@@ -1406,7 +1432,7 @@
 
         </div>
 
-        <!-- Liability alert — o argumento jurídico + comercial -->
+        <!-- Liability alert — argumento jurídico + visual + amplificadores -->
         <div class="liability-alert scroll-reveal mt-10">
 
             <!-- Parte 1: argumento jurídico -->
@@ -1414,14 +1440,22 @@
                 <div class="la-dot"></div>
                 Alerta Jurídico · Lei 14.967/24 — Novo Estatuto da Segurança Privada
             </div>
-            <div class="la-title">
-                O contratante também<br>responde. Solidariamente.
-            </div>
+            <div class="la-title">O contratante também responde.</div>
             <div class="la-text">
-                O Novo Estatuto da Segurança Privada estabelece que o <strong>contratante compartilha responsabilidade solidária</strong> pelos atos praticados durante a prestação do serviço. Isso significa que, na ausência de documentação adequada, <strong>uma ocorrência pode expor juridicamente não só a empresa de segurança, mas também o cliente que a contratou</strong>.
+                Com o novo Estatuto da Segurança Privada, a responsabilidade por irregularidades não é apenas da empresa de segurança.
                 <br><br>
-                O portal do <strong>Fiscal de Contrato</strong> da ATIV Brasil foi criado para isso: dar ao contratante <strong>visibilidade em tempo real</strong> sobre conformidade, escala e ocorrências — e a ele própria a proteção de estar documentalmente informado.
+                <strong>O contratante responde solidariamente.</strong>
+                <br><br>
+                Isso significa que: se houver uma ocorrência com vigilante irregular, documentação vencida ou falha operacional, <strong>o cliente também pode ser responsabilizado juridicamente</strong>.
+                <br><br>
+                O Portal do Contratante ATIV foi criado para evitar isso. Ele oferece:
             </div>
+            <ul class="la-list">
+                <li>Monitoramento de conformidade em tempo real</li>
+                <li>Documentação auditável de toda a operação</li>
+                <li>Registro contínuo de ocorrências e escalas</li>
+                <li>Evidência legal para fiscalizações e processos</li>
+            </ul>
             <div class="la-law">Art. referente à responsabilidade solidária · Lei nº 14.967, de 11 de setembro de 2024</div>
 
             <!-- Imagem central: prova visual do portal -->
@@ -1433,13 +1467,28 @@
                 >
             </div>
 
-            <!-- Parte 2: argumento comercial -->
-            <div class="la-transp-strip">
-                <div class="la-transp-badge">Diferencial Competitivo</div>
-                <div class="la-transp-title">Transparência gera contrato.<br>E renova.</div>
-                <p class="la-transp-text">
-                    Quando o cliente consegue acompanhar tudo — quem está de plantão, se os documentos estão em dia, o que aconteceu no turno — ele deixa de tratar o serviço como custo e passa a enxergar como parceria. <strong>Empresas que entregam visibilidade ao contratante retêm clientes por mais tempo e fecham novos contratos com muito mais facilidade</strong>: o portal vira argumento comercial antes mesmo de virar obrigação contratual.
-                </p>
+            <!-- Amplificadores de valor -->
+            <div class="la-amplifiers">
+                <div class="la-amp-card">
+                    <div class="la-amp-icon">📊</div>
+                    <div class="la-amp-title">Conformidade em Tempo Real</div>
+                    <p class="la-amp-desc">Veja quem está de serviço e se todos os documentos estão válidos — sem precisar ligar para ninguém.</p>
+                </div>
+                <div class="la-amp-card">
+                    <div class="la-amp-icon">⚖️</div>
+                    <div class="la-amp-title">Evidência Jurídica</div>
+                    <p class="la-amp-desc">Relatórios exportáveis que comprovam fiscalização ativa. Documentação pronta para auditorias e processos.</p>
+                </div>
+                <div class="la-amp-card">
+                    <div class="la-amp-icon">🛡️</div>
+                    <div class="la-amp-title">Proteção do Contratante</div>
+                    <p class="la-amp-desc">Transparência operacional que reduz o risco de responsabilidade solidária e fortalece a relação com a empresa contratada.</p>
+                </div>
+            </div>
+
+            <!-- Fechamento -->
+            <div class="la-closing">
+                Quem não documenta a operação não consegue provar que fiscalizou.
             </div>
 
         </div>
