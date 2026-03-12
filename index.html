@@ -459,25 +459,17 @@
             padding: 20px 18px;
         }
         @media(min-width:640px) { .liability-alert { padding: 28px 32px; } }
-        .la-inner {
-            display: flex;
-            gap: 40px;
-            align-items: flex-start;
+        .la-visual-full {
+            margin: 24px 0;
         }
-        .la-content { flex: 1; min-width: 0; }
-        .la-visual {
-            width: 42%;
-            max-width: 420px;
-            flex-shrink: 0;
-            display: none;
-        }
-        @media(min-width:900px) { .la-visual { display: block; } }
-        .la-visual img {
-            width: 100%;
-            border-radius: 6px;
-            border: 1px solid rgba(255,255,255,0.06);
-            box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+        .la-visual-full img {
             display: block;
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.07);
+            box-shadow: 0 12px 48px rgba(0,0,0,0.6);
         }
         .liability-alert .la-eyebrow {
             font-family: 'DM Mono', monospace;
@@ -1416,40 +1408,40 @@
 
         <!-- Liability alert — o argumento jurídico + comercial -->
         <div class="liability-alert scroll-reveal mt-10">
-            <div class="la-inner">
-                <div class="la-content">
-                    <div class="la-eyebrow">
-                        <div class="la-dot"></div>
-                        Alerta Jurídico · Lei 14.967/24 — Novo Estatuto da Segurança Privada
-                    </div>
-                    <div class="la-title">
-                        O contratante também<br>responde. Solidariamente.
-                    </div>
-                    <div class="la-text">
-                        O Novo Estatuto da Segurança Privada estabelece que o <strong>contratante compartilha responsabilidade solidária</strong> pelos atos praticados durante a prestação do serviço. Isso significa que, na ausência de documentação adequada, <strong>uma ocorrência pode expor juridicamente não só a empresa de segurança, mas também o cliente que a contratou</strong>.
-                        <br><br>
-                        O portal do <strong>Fiscal de Contrato</strong> da ATIV Brasil foi criado para isso: dar ao contratante <strong>visibilidade em tempo real</strong> sobre conformidade, escala e ocorrências — e a ele própria a proteção de estar documentalmente informado.
-                    </div>
-                    <div class="la-law">Art. referente à responsabilidade solidária · Lei nº 14.967, de 11 de setembro de 2024</div>
 
-                    <!-- Argumento comercial: transparência gera contrato -->
-                    <div class="la-transp-strip">
-                        <div class="la-transp-badge">Diferencial Competitivo</div>
-                        <div class="la-transp-title">Transparência gera contrato.<br>E renova.</div>
-                        <p class="la-transp-text">
-                            Quando o cliente consegue acompanhar tudo — quem está de plantão, se os documentos estão em dia, o que aconteceu no turno — ele deixa de tratar o serviço como custo e passa a enxergar como parceria. <strong>Empresas que entregam visibilidade ao contratante retêm clientes por mais tempo e fecham novos contratos com muito mais facilidade</strong>: o portal vira argumento comercial antes mesmo de virar obrigação contratual.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="la-visual">
-                    <img
-                        src="https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/transparenciacliente.png"
-                        alt="Portal do Fiscal de Contrato — visibilidade em tempo real para o contratante"
-                        loading="lazy"
-                    >
-                </div>
+            <!-- Parte 1: argumento jurídico -->
+            <div class="la-eyebrow">
+                <div class="la-dot"></div>
+                Alerta Jurídico · Lei 14.967/24 — Novo Estatuto da Segurança Privada
             </div>
+            <div class="la-title">
+                O contratante também<br>responde. Solidariamente.
+            </div>
+            <div class="la-text">
+                O Novo Estatuto da Segurança Privada estabelece que o <strong>contratante compartilha responsabilidade solidária</strong> pelos atos praticados durante a prestação do serviço. Isso significa que, na ausência de documentação adequada, <strong>uma ocorrência pode expor juridicamente não só a empresa de segurança, mas também o cliente que a contratou</strong>.
+                <br><br>
+                O portal do <strong>Fiscal de Contrato</strong> da ATIV Brasil foi criado para isso: dar ao contratante <strong>visibilidade em tempo real</strong> sobre conformidade, escala e ocorrências — e a ele própria a proteção de estar documentalmente informado.
+            </div>
+            <div class="la-law">Art. referente à responsabilidade solidária · Lei nº 14.967, de 11 de setembro de 2024</div>
+
+            <!-- Imagem central: prova visual do portal -->
+            <div class="la-visual-full">
+                <img
+                    src="https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/transparenciacliente.png"
+                    alt="Portal do Fiscal de Contrato — visibilidade em tempo real para o contratante"
+                    loading="lazy"
+                >
+            </div>
+
+            <!-- Parte 2: argumento comercial -->
+            <div class="la-transp-strip">
+                <div class="la-transp-badge">Diferencial Competitivo</div>
+                <div class="la-transp-title">Transparência gera contrato.<br>E renova.</div>
+                <p class="la-transp-text">
+                    Quando o cliente consegue acompanhar tudo — quem está de plantão, se os documentos estão em dia, o que aconteceu no turno — ele deixa de tratar o serviço como custo e passa a enxergar como parceria. <strong>Empresas que entregam visibilidade ao contratante retêm clientes por mais tempo e fecham novos contratos com muito mais facilidade</strong>: o portal vira argumento comercial antes mesmo de virar obrigação contratual.
+                </p>
+            </div>
+
         </div>
 
     </div>
