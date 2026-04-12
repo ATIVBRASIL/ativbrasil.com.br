@@ -153,8 +153,8 @@ const features = [
     id: "feature10",
     icon: "👤",
     title: "INTELIGÊNCIA DE PATRULHAMENTO",
-    description: "Transforme Patrulhamento em Operação Planejada e Auditável\n\nMapeie pontos críticos, defina rotas e estabeleça janelas de tempo para cada etapa da patrulha.\nTudo estruturado para garantir cobertura, previsibilidade e controle.\n\nMais organização na execução.\nMais capacidade de auditoria e prestação de contas.",
-    image: "https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/cppronda.png",
+    description: "Geolocalização - Transforme Patrulhamento em Operação Planejada e Auditável\n\nMapeie pontos críticos, defina rotas e estabeleça janelas de tempo para cada etapa da patrulha.\nTudo estruturado para garantir cobertura, previsibilidade e controle.\n\nMais organização na execução.\nMais capacidade de auditoria e prestação de contas.",
+    image: "https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/Geolocalizacao.png",
     inverted: false
   },
   {
