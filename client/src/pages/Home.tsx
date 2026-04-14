@@ -107,13 +107,13 @@ const problems = [
 ];
 
 const typewriterTexts = [
-  "Exposição Regulatória",
-  "Conformidade em Tempo Real",
-  "Efetivo Tático",
-  "Documentação Obrigatória",
-  "Perfil Operacional",
-  "Gestão de Riscos",
-  "Inteligência Operacional"
+  "Falha invisível",
+  "Operação no escuro",
+  "Contrato em risco",
+  "Erro sem prova",
+  "Dinheiro vazando",
+  "Equipe fora do radar",
+  "Controle total"
 ];
 
 const features = [
@@ -264,7 +264,7 @@ export default function Home() {
           <div className="flex items-center justify-center mb-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-900/10 border border-blue-900/30 rounded-full">
               <div className="w-2 h-2 rounded-full bg-blue-900"></div>
-              <span className="text-sm font-semibold text-blue-900">Gestão Manual = Risco Operacional</span>
+              <span className="text-sm font-semibold text-blue-900">Seus olhos em tudo</span>
             </div>
           </div>
 
@@ -273,7 +273,7 @@ export default function Home() {
           </h1>
 
           <p className="text-xl text-center text-slate-600 max-w-3xl mx-auto mb-12">
-            Tecnologia e inteligência aplicadas para eliminar falhas operacionais, padronizar processos e aumentar a confiabilidade da sua operação.
+            Se sua operação falha, você perde contrato. Aqui você vê tudo, prova tudo e não é pego de surpresa.
           </p>
 
           <div className="flex justify-center mb-12">
@@ -301,7 +301,7 @@ export default function Home() {
       <section id="section-riscos" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-slate-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl sm:text-5xl font-bold text-center text-slate-900 mb-16 font-serif">
-            9 Riscos Ocultos da Gestão Manual que Podem Estar Comprometendo Sua Operação Agora
+            9 falhas ocultas que podem custar seu próximo contrato
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -340,14 +340,14 @@ export default function Home() {
       <section id="section-storytelling" className="py-20 px-4 sm:px-6 lg:px-8 bg-white border-t border-slate-200">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h3 className="text-3xl sm:text-4xl font-bold text-slate-900 font-serif">
-            O SISTEMA INTELIGENTE QUE CONTROLA E PADRONIZA SUA OPERAÇÃO
+            O SISTEMA QUE ORGANIZA O CAOS DA SUA OPERAÇÃO
           </h3>
           <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 font-serif">
             {displayText}
             <span className="animate-pulse">|</span>
           </h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Reduza custos operacionais e melhore a qualidade do serviço usando um único sistema operacional unificado que consolida segurança, manutenção, limpeza e gestão.
+            Tudo em um lugar. Sem ruído, sem retrabalho, sem surpresa.
           </p>
         </div>
       </section>
@@ -360,7 +360,11 @@ export default function Home() {
       >
         <div className="max-w-6xl mx-auto relative">
           <h2 className="text-4xl sm:text-5xl font-bold text-center text-slate-900 mb-20 font-serif">
-            O mais completo sistema operacional da segurança privada e facilities do Brasil
+            O novo padrão da segurança privada no Brasil.
+            <br />
+            <span className="block font-normal italic text-[1.8rem] sm:text-[2.4rem]">
+              Alinhado à Lei 14.967 e à ISO 18788.
+            </span>
           </h2>
 
           {/* Path Line SVG */}
@@ -536,106 +540,118 @@ export default function Home() {
       {/* Comparison Table Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white border-t border-slate-200">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl sm:text-5xl font-bold text-center text-slate-900 mb-4 font-serif">
-            Por Que Escolher um Sistema Integrado?
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 font-serif text-center">
+            Como sua operação funciona hoje vs como poderia funcionar
           </h2>
-          <p className="text-xl text-center text-slate-600 max-w-3xl mx-auto mb-16">
-            Veja a diferença entre gestão manual, múltiplos apps e uma solução completa e integrada
+          <p className="text-lg text-slate-600 text-center max-w-3xl mx-auto mt-4">
+            O jeito caro de operar versus o jeito de ter controle, prova e escala sem perder contrato.
           </p>
-          
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse">
+
+          <div className="overflow-x-auto mt-12">
+            <table className="w-full border-collapse text-sm sm:text-base">
               <thead>
                 <tr className="bg-slate-900 text-white">
-                  <th className="border border-slate-300 px-4 py-4 text-left font-semibold text-sm">Aspecto</th>
-                  <th className="border border-slate-300 px-4 py-4 text-center font-semibold text-sm">Gestão Manual</th>
-                  <th className="border border-slate-300 px-4 py-4 text-center font-semibold text-sm">Múltiplos Apps</th>
-                  <th className="border border-slate-300 px-4 py-4 text-center font-semibold text-sm bg-blue-900">Sistema ATIV</th>
+                  <th className="border border-slate-300 px-4 py-4 text-left font-semibold">Aspecto</th>
+                  <th className="border border-slate-300 px-4 py-4 text-center font-semibold">Gestão Manual</th>
+                  <th className="border border-slate-300 px-4 py-4 text-center font-semibold">Múltiplos Apps</th>
+                  <th className="border border-slate-300 px-4 py-4 text-center font-semibold bg-blue-900">Sistema ATIV</th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="hover:bg-slate-50 transition-colors">
                   <td className="border border-slate-300 px-4 py-4 font-semibold text-slate-900">Visibilidade em Tempo Real</td>
-                  <td className="border border-slate-300 px-4 py-4 text-center"><span className="inline-block bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-semibold">❌ Dados atrasados</span></td>
-                  <td className="border border-slate-300 px-4 py-4 text-center"><span className="inline-block bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-semibold">⚠️ Parcial (silos)</span></td>
-                  <td className="border border-slate-300 px-4 py-4 text-center bg-blue-50"><span className="inline-block bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">✅ Completa</span></td>
+                  <td className="border border-slate-300 px-4 py-4 text-center text-slate-700">Você decide com informação velha</td>
+                  <td className="border border-slate-300 px-4 py-4 text-center text-slate-700">Você vê partes, não o todo</td>
+                  <td className="border border-slate-300 px-4 py-4 text-center text-slate-900 bg-blue-50 font-medium">Você vê tudo em tempo real</td>
                 </tr>
                 <tr className="hover:bg-slate-50 transition-colors">
                   <td className="border border-slate-300 px-4 py-4 font-semibold text-slate-900">Conformidade & Compliance</td>
-                  <td className="border border-slate-300 px-4 py-4 text-center"><span className="inline-block bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-semibold">❌ Manual</span></td>
-                  <td className="border border-slate-300 px-4 py-4 text-center"><span className="inline-block bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-semibold">⚠️ Fragmentada</span></td>
-                  <td className="border border-slate-300 px-4 py-4 text-center bg-blue-50"><span className="inline-block bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">✅ Automática</span></td>
+                  <td className="border border-slate-300 px-4 py-4 text-center text-slate-700">Depende de gente lembrar</td>
+                  <td className="border border-slate-300 px-4 py-4 text-center text-slate-700">Regras soltas em vários lugares</td>
+                  <td className="border border-slate-300 px-4 py-4 text-center text-slate-900 bg-blue-50 font-medium">Conformidade sem esforço</td>
                 </tr>
                 <tr className="hover:bg-slate-50 transition-colors">
                   <td className="border border-slate-300 px-4 py-4 font-semibold text-slate-900">Padronização Operacional</td>
-                  <td className="border border-slate-300 px-4 py-4 text-center"><span className="inline-block bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-semibold">❌ Cada um faz do seu jeito</span></td>
-                  <td className="border border-slate-300 px-4 py-4 text-center"><span className="inline-block bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-semibold">⚠️ Parcial</span></td>
-                  <td className="border border-slate-300 px-4 py-4 text-center bg-blue-50"><span className="inline-block bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">✅ Unificada</span></td>
+                  <td className="border border-slate-300 px-4 py-4 text-center text-slate-700">Cada operador inventa um padrão</td>
+                  <td className="border border-slate-300 px-4 py-4 text-center text-slate-700">Cada app puxa para um lado</td>
+                  <td className="border border-slate-300 px-4 py-4 text-center text-slate-900 bg-blue-50 font-medium">Um padrão único para toda a operação</td>
                 </tr>
                 <tr className="hover:bg-slate-50 transition-colors">
                   <td className="border border-slate-300 px-4 py-4 font-semibold text-slate-900">Exposição a Falhas Operacionais</td>
-                  <td className="border border-slate-300 px-4 py-4 text-center"><span className="inline-block bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-semibold">❌ Alta (erros, esquecimentos, retrabalho)</span></td>
-                  <td className="border border-slate-300 px-4 py-4 text-center"><span className="inline-block bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-semibold">⚠️ Média (quebras de fluxo e perda de contexto)</span></td>
-                  <td className="border border-slate-300 px-4 py-4 text-center bg-blue-50"><span className="inline-block bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">✅ Controlada (processos padronizados e monitorados)</span></td>
+                  <td className="border border-slate-300 px-4 py-4 text-center text-slate-700">Erro constante. Retrabalho diário.</td>
+                  <td className="border border-slate-300 px-4 py-4 text-center text-slate-700">Falha nasce na troca entre sistemas</td>
+                  <td className="border border-slate-300 px-4 py-4 text-center text-slate-900 bg-blue-50 font-medium">Processos monitorados e sob controle</td>
                 </tr>
                 <tr className="hover:bg-slate-50 transition-colors">
                   <td className="border border-slate-300 px-4 py-4 font-semibold text-slate-900">Escalabilidade</td>
-                  <td className="border border-slate-300 px-4 py-4 text-center"><span className="inline-block bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-semibold">❌ Limitada</span></td>
-                  <td className="border border-slate-300 px-4 py-4 text-center"><span className="inline-block bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-semibold">⚠️ Complexa</span></td>
-                  <td className="border border-slate-300 px-4 py-4 text-center bg-blue-50"><span className="inline-block bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">✅ Ilimitada</span></td>
+                  <td className="border border-slate-300 px-4 py-4 text-center text-slate-700">Crescer = perder controle</td>
+                  <td className="border border-slate-300 px-4 py-4 text-center text-slate-700">Crescer = mais complexidade</td>
+                  <td className="border border-slate-300 px-4 py-4 text-center text-slate-900 bg-blue-50 font-medium">Escala sem perder controle</td>
                 </tr>
                 <tr className="hover:bg-slate-50 transition-colors">
                   <td className="border border-slate-300 px-4 py-4 font-semibold text-slate-900">Relatórios & Inteligência</td>
-                  <td className="border border-slate-300 px-4 py-4 text-center"><span className="inline-block bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-semibold">❌ Manuais</span></td>
-                  <td className="border border-slate-300 px-4 py-4 text-center"><span className="inline-block bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-semibold">⚠️ Múltiplas</span></td>
-                  <td className="border border-slate-300 px-4 py-4 text-center bg-blue-50"><span className="inline-block bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">✅ Consolidados</span></td>
+                  <td className="border border-slate-300 px-4 py-4 text-center text-slate-700">Relatório manual e atrasado</td>
+                  <td className="border border-slate-300 px-4 py-4 text-center text-slate-700">Dados espalhados e sem contexto</td>
+                  <td className="border border-slate-300 px-4 py-4 text-center text-slate-900 bg-blue-50 font-medium">Dados consolidados para decidir</td>
                 </tr>
                 <tr className="hover:bg-slate-50 transition-colors">
                   <td className="border border-slate-300 px-4 py-4 font-semibold text-slate-900">Renovação de Contratos</td>
-                  <td className="border border-slate-300 px-4 py-4 text-center"><span className="inline-block bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-semibold">❌ Insatisfeitos</span></td>
-                  <td className="border border-slate-300 px-4 py-4 text-center"><span className="inline-block bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-semibold">⚠️ Inconsistente</span></td>
-                  <td className="border border-slate-300 px-4 py-4 text-center bg-blue-50"><span className="inline-block bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">✅ Satisfeitos</span></td>
+                  <td className="border border-slate-300 px-4 py-4 text-center text-slate-700">Cliente sente a falha antes de você</td>
+                  <td className="border border-slate-300 px-4 py-4 text-center text-slate-700">Entrega inconsistente gera desgaste</td>
+                  <td className="border border-slate-300 px-4 py-4 text-center text-slate-900 bg-blue-50 font-medium">Cliente vê padrão, controle e confiança</td>
                 </tr>
                 <tr className="hover:bg-slate-50 transition-colors">
                   <td className="border border-slate-300 px-4 py-4 font-semibold text-slate-900">Rastreabilidade Completa</td>
-                  <td className="border border-slate-300 px-4 py-4 text-center"><span className="inline-block bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-semibold">❌ Impossível</span></td>
-                  <td className="border border-slate-300 px-4 py-4 text-center"><span className="inline-block bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-semibold">⚠️ Parcial</span></td>
-                  <td className="border border-slate-300 px-4 py-4 text-center bg-blue-50"><span className="inline-block bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">✅ 100% auditável</span></td>
+                  <td className="border border-slate-300 px-4 py-4 text-center text-slate-700">Você não consegue provar nada</td>
+                  <td className="border border-slate-300 px-4 py-4 text-center text-slate-700">Parte da prova fica perdida</td>
+                  <td className="border border-slate-300 px-4 py-4 text-center text-slate-900 bg-blue-50 font-medium">100% rastreável e auditável</td>
                 </tr>
                 <tr className="hover:bg-slate-50 transition-colors">
                   <td className="border border-slate-300 px-4 py-4 font-semibold text-slate-900">Suporte & Evolução</td>
-                  <td className="border border-slate-300 px-4 py-4 text-center"><span className="inline-block bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-semibold">❌ Sem suporte</span></td>
-                  <td className="border border-slate-300 px-4 py-4 text-center"><span className="inline-block bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-semibold">⚠️ Fragmentado</span></td>
-                  <td className="border border-slate-300 px-4 py-4 text-center bg-blue-50"><span className="inline-block bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">✅ Unificado</span></td>
+                  <td className="border border-slate-300 px-4 py-4 text-center text-slate-700">Sem estrutura para evoluir</td>
+                  <td className="border border-slate-300 px-4 py-4 text-center text-slate-700">Cada fornecedor empurra o problema</td>
+                  <td className="border border-slate-300 px-4 py-4 text-center text-slate-900 bg-blue-50 font-medium">Um sistema só. Evolução contínua.</td>
                 </tr>
                 <tr className="hover:bg-slate-50 transition-colors bg-slate-100">
                   <td className="border border-slate-300 px-4 py-4 font-bold text-slate-900">Capacidade de Comprovação</td>
-                  <td className="border border-slate-300 px-4 py-4 text-center"><span className="inline-block bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-bold">❌ Fraca (difícil provar execução e responsabilidade)</span></td>
-                  <td className="border border-slate-300 px-4 py-4 text-center"><span className="inline-block bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-bold">⚠️ Inconsistente (dados dispersos e incompletos)</span></td>
-                  <td className="border border-slate-300 px-4 py-4 text-center bg-blue-50"><span className="inline-block bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-bold">✅ Forte (dados estruturados, rastreavéis e auditáveis)</span></td>
+                  <td className="border border-slate-300 px-4 py-4 text-center text-slate-700">Quando dá problema, vira desculpa</td>
+                  <td className="border border-slate-300 px-4 py-4 text-center text-slate-700">Prova fraca e contexto quebrado</td>
+                  <td className="border border-slate-300 px-4 py-4 text-center text-slate-900 bg-blue-50 font-bold">Prova forte, pronta para auditoria e defesa</td>
                 </tr>
               </tbody>
             </table>
           </div>
           
           <div className="mt-12 p-8 bg-blue-50 border-l-4 border-blue-900 rounded-lg">
-            <h3 className="text-2xl font-bold text-slate-900 mb-4">Por Que o ATIV é a Escolha Certa?</h3>
-            <ul className="space-y-3 text-slate-700">
+            <h3 className="text-2xl font-bold text-slate-900 mb-4">O que muda quando você usa o ATIV</h3>
+            <ul className="space-y-4 text-slate-700">
               <li className="flex items-start gap-3">
-                <span className="text-green-600 font-bold text-xl mt-1">✓</span>
-                <span><strong>Você deixa de operar no escuro</strong> Tenha visibilidade real do que está acontecendo em cada posto, em tempo real.</span>
+                <span className="text-xl mt-0.5 shrink-0" aria-hidden>⚡</span>
+                <div>
+                  <strong className="block text-slate-900">Você para de operar no escuro.</strong>
+                  <span className="block mt-1">Veja tudo acontecendo em tempo real, sem depender de ninguém te contar.</span>
+                </div>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-green-600 font-bold text-xl mt-1">✓</span>
-                <span><strong>Você reduz risco antes do problema acontecer</strong> Identifique falhas operacionais, documentais e comportamentais antes que virem incidente.</span>
+                <span className="text-xl mt-0.5 shrink-0" aria-hidden>⚡</span>
+                <div>
+                  <strong className="block text-slate-900">Você evita problema antes de virar crise.</strong>
+                  <span className="block mt-1">Identifique falhas operacionais e comportamentais antes que virem prejuízo.</span>
+                </div>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-green-600 font-bold text-xl mt-1">✓</span>
-                <span><strong>Você passa a ter prova, não justificativa</strong> Tudo registrado, estruturado e pronto para auditoria, cliente ou defesa.</span>
+                <span className="text-xl mt-0.5 shrink-0" aria-hidden>⚡</span>
+                <div>
+                  <strong className="block text-slate-900">Você tem prova — não desculpa.</strong>
+                  <span className="block mt-1">Tudo registrado, estruturado e pronto pra auditoria ou defesa.</span>
+                </div>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-green-600 font-bold text-xl mt-1">✓</span>
-                <span><strong>Você controla a operação de ponta a ponta</strong> Do campo ao comando, tudo integrado em um único sistema operacional.</span>
+                <span className="text-xl mt-0.5 shrink-0" aria-hidden>⚡</span>
+                <div>
+                  <strong className="block text-slate-900">Você assume o controle de ponta a ponta.</strong>
+                  <span className="block mt-1">Do campo ao comando, tudo integrado em um único sistema.</span>
+                </div>
               </li>
             </ul>
           </div>
@@ -646,17 +662,17 @@ export default function Home() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-900/5 to-slate-900/5 border-t border-slate-200">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 font-serif">
-            Pronto para Transformar Sua Operação?
+            Quantos contratos você ainda vai perder antes de resolver isso?
           </h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Descubra como o Sistema Operacional pode eliminar esses problemas e colocar sua empresa no caminho do crescimento sustentável.
+            Veja em minutos onde sua operação está falhando — e como resolver.
           </p>
           <WhatsAppCta
             messagePreset="demo"
             size="lg"
             className="bg-blue-900 hover:bg-blue-950 text-white font-semibold px-8 py-6 text-lg rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
           >
-            Agendar Demonstração
+            Quero ver minha operação agora
             <ArrowRight className="ml-2 w-5 h-5" />
           </WhatsAppCta>
         </div>

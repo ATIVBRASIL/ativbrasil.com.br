@@ -1,12 +1,15 @@
 {
   "name": "sistema_seguranca_facilities",
   "version": "1.0.0",
+  "homepage": "https://ativbrasil.com.br",
   "type": "module",
   "license": "MIT",
   "scripts": {
     "dev": "vite --host",
     "rum": "vite --host",
     "build": "vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist/public",
     "start": "cross-env NODE_ENV=production node dist/index.js",
     "preview": "vite preview --host",
     "check": "tsc --noEmit",
@@ -79,6 +82,7 @@
     "autoprefixer": "^10.4.20",
     "cross-env": "^10.1.0",
     "esbuild": "^0.25.0",
+    "gh-pages": "^6.3.0",
     "pnpm": "^10.15.1",
     "postcss": "^8.4.47",
     "prettier": "^3.6.2",
