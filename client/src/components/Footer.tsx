@@ -27,14 +27,6 @@ export default function Footer() {
           <div>
             <p className="footer-title">Contato</p>
             <div className="space-y-3">
-              <a
-                className="footer-link block"
-                href={waEspecialista}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                WhatsApp: (19) 97401-0028
-              </a>
               <a className="footer-link block" href="mailto:operacoes@ativbrasil.com.br">
                 operacoes@ativbrasil.com.br
               </a>
