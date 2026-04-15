@@ -228,11 +228,11 @@ const features = [
   {
     id: "feature13",
     group: "REGISTRO, BENS, MANUTENÇÃO E FACILITIES",
-    title: "CONTROLE DE BENS",
-    headline: "Equipamento Sem Controle É Prejuízo na Certa",
-    description: "Sem rastreamento, equipamento some, falha ou fica fora de uso sem ninguém perceber. O sistema conecta cada bem a um posto, status e histórico — com QR Code, ficha completa e inventário lido no celular. Nada fica solto. Nada fica invisível. Você sabe exatamente o que está ativo, parado ou em risco.",
+    title: "CONTROLE DE BENS DO CLIENTE",
+    headline: "O Patrimônio É do Cliente. A Responsabilidade É Sua.",
+    description: "Quando some, falha ou desaparece um bem do cliente, quem responde é a empresa de segurança. A ISO 18788 trata o ativo do cliente como parte obrigatória do sistema de gestão. Aqui cada bem ganha QR Code, posto, status, ficha e histórico — lido no celular, atualizado no campo. Você protege o patrimônio do cliente e protege o seu contrato.",
     image: "https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/patrimonio.png",
-    alt: "Painel de patrimônio com totais de bens, ativos, em manutenção e aguardando validação, lista de bens com código, nome, categoria, posto e status"
+    alt: "Painel de patrimônio do cliente com totais de bens, ativos, em manutenção e aguardando validação, lista de bens com código, nome, categoria, posto vinculado e status"
   },
   {
     id: "feature14",
