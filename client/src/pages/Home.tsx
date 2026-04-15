@@ -118,100 +118,139 @@ const typewriterTexts = [
 
 const features = [
   {
-    id: "feature6",
-    icon: "👤",
+    id: "feature1",
+    group: "EFETIVO",
     title: "CONTROLE OPERACIONAL DO EFETIVO",
-    description: "Você Decide com Clareza Antes de Escalar\n\nTenha uma visão completa de cada operador em um único lugar: função, equipe, disponibilidade, conformidade e presença.\n\nEvite escalar quem está irregular ou indisponível. A decisão deixa de ser no improviso — e passa a ser baseada em controle.",
+    headline: "Decida com Clareza Antes de Escalar",
+    description: "Função, equipe, disponibilidade, conformidade e presença de cada operador em um único lugar. Você enxerga quem está apto, quem está irregular e quem está indisponível antes de bater o martelo. A escala deixa de ser improviso de última hora e passa a ser decisão com critério, respaldo e responsável.",
     image: "https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/ativefetivo1.png",
-    inverted: false
+    alt: "Painel de controle operacional do efetivo com lista de operadores, função, equipe, status de férias, afastamento, treinamento e ações de liberação e escala"
+  },
+  {
+    id: "feature2",
+    group: "EFETIVO",
+    title: "CONTROLE DE DOCUMENTAÇÃO",
+    headline: "Saiba Quem Está Regular Antes do Problema Aparecer",
+    description: "CNV, reciclagem, ASO, psicotécnico, criminal — tudo centralizado, com validade visível e alertas de vencimento. A Lei 14.967 exige aptidão e formação em dia. Aqui você antecipa o vencimento, evita escalar irregular e mantém a operação dentro do que a Polícia Federal cobra.",
+    image: "https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/controledocumentos.png",
+    alt: "Tela de prontuário do operador com aba Documentos exibindo CNH, reciclagem, CNV, criminal, psicotécnico e ASO com status de validade e alertas de vencimento"
+  },
+  {
+    id: "feature3",
+    group: "EFETIVO",
+    title: "CONTROLE DE TREINAMENTOS",
+    headline: "Cada Posto com o Profissional Certificado",
+    description: "O sistema conecta exigências do posto, efetivo alocado e status de treinamento em uma única visão. Você sabe exatamente quem está apto e quem precisa de regularização. A conformidade que a ISO 18788 cobra deixa de ser papel guardado em pasta e vira controle visível, acionável e auditável.",
+    image: "https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/treinamentos.png",
+    alt: "Painel do posto com cobertura de treinamentos obrigatórios em 100%, lista de profissionais alocados e levantamento de necessidades de treinamento (LNT)"
+  },
+  {
+    id: "feature4",
+    group: "EFETIVO",
+    title: "PERFIL OPERACIONAL DO POSTO",
+    headline: "Pare de Escalar no Improviso",
+    description: "Cada posto exige um perfil. Cada operador tem o seu. Quando os dois não conversam, o risco aparece — e a culpa cai em quem escalou no chute. Nosso Motor de Decisão sugere o perfil ideal do posto, você valida em um clique e salva o critério oficial. Decisão com clareza, escala com critério.",
+    image: "https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/perfil_posto.png",
+    alt: "Tela do Motor de Decisão sugerindo o perfil operacional ideal do posto, com perfil predominante, complementar e de menor aderência, e ajustes por blocos de exigência"
+  },
+  {
+    id: "feature5",
+    group: "POSTO E EXECUÇÃO",
+    title: "SEGURANÇA NA PORTARIA",
+    headline: "Sem Controle de Acesso, Não Existe Segurança",
+    description: "Sem registro estruturado, você perde a visibilidade de quem entrou, quem saiu e quem está dentro do local agora. O sistema transforma a portaria em ponto de controle real — entradas, bloqueios, encomendas e permanentes em um só painel. Agilidade no fluxo, sem abrir mão da segurança.",
+    image: "https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/controleacesso.png",
+    alt: "Painel tático da portaria com abas Hoje, Bloqueados, Permanentes, Encomendas e Unidades, exibindo entradas, dentro agora e encomendas pendentes"
+  },
+  {
+    id: "feature6",
+    group: "POSTO E EXECUÇÃO",
+    title: "INTELIGÊNCIA DE PATRULHAMENTO",
+    headline: "Patrulhamento Vira Operação Planejada e Auditável",
+    description: "Geolocalização, mapeamento de pontos críticos, rotas definidas e janelas de tempo para cada etapa. Tudo estruturado para garantir cobertura, previsibilidade e prova. Quem fez, quando fez, por onde passou — registrado. Mais organização na execução, mais respaldo na prestação de contas ao cliente.",
+    image: "https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/Geolocalizacao.png",
+    alt: "Mapa de geolocalização do condomínio com pontos de patrulhamento marcados ao longo do perímetro e rotas definidas"
   },
   {
     id: "feature7",
-    icon: "👤",
-    title: "CONTROLE DE DOCUMENTAÇÃO",
-    description: "Você Sabe Quem Está Regular — Antes do Problema Acontecer\n\nVisualize, em segundos, o status de todos os documentos do operador.\nValidade, alertas de vencimento e histórico centralizados em um único lugar.\n\nEvite colocar profissionais irregulares em atividade.\nAntecipe riscos e mantenha a operação sempre em conformidade.",
-    image: "https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/controledocumentos.png",
-    inverted: true
+    group: "POSTO E EXECUÇÃO",
+    title: "EXECUÇÃO DE RONDA",
+    headline: "Ronda com Controle. Não com Confiança Cega",
+    description: "O operador segue a ordem definida, com horários e janelas claras para cada ponto. Quando algo não é realizado, o sistema exige justificativa — não aceita silêncio. Cada passagem vira registro. Cada ausência vira evidência. Rastreabilidade real, do briefing à conferência final.",
+    image: "https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/cppronda1.png",
+    alt: "Tela mobile do app ATIV exibindo a ordem da ronda com ponto da Portaria às 06:10, janela de 60 minutos, status não realizado e botão Justificar"
   },
   {
     id: "feature8",
-    icon: "👤",
-    title: "VISÃO DA OPERAÇÃO EM TEMPO REAL",
-    description: "Tenha Controle Total Sobre Todos os Seus Postos\n\nVisualize toda a rede em um único painel, com status, atividade e ocorrências por local.\nIdentifique rapidamente onde há movimento e onde precisa de atenção.\n\nMenos tempo procurando.\nMais controle sobre a operação como um todo.",
-    image: "https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/centralpostos.png",
-    inverted: false
+    group: "POSTO E EXECUÇÃO",
+    title: "DEFESA OPERACIONAL",
+    headline: "Um Relato Mal Escrito Pode Custar Caro",
+    description: "A Escrita Tática elimina a subjetividade e padroniza automaticamente como cada ocorrência é registrada — verbalização, controle de contato, técnicas não letais e força letal. Você não depende mais da forma como o operador escreve. O sistema garante o padrão que sustenta sua defesa em juízo, na PF e diante do cliente.",
+    image: "https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/reescrita.png",
+    alt: "Tela mobile com escala de uso da força padronizada: verbalização, controle de contato, técnicas não letais e força letal, cada nível com descrição padronizada"
   },
   {
     id: "feature9",
-    icon: "👤",
-    title: "CONTROLE DE QUALIDADE OPERACIONAL",
-    description: "Você Sabe Onde Está o Problema — Antes do Cliente\n\nAcompanhe, em tempo real, o desempenho dos postos e do efetivo com base em inspeções padronizadas.\nIdentifique quedas, pontos críticos e tendências antes que virem reclamação.\n\nMenos achismo.\nMais controle sobre a qualidade da operação.",
-    image: "https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/InspecaoPostos.png",
-    inverted: true
+    group: "VISÃO, QUALIDADE E RISCO",
+    title: "VISÃO DA OPERAÇÃO EM TEMPO REAL",
+    headline: "Toda a Rede de Postos em um Único Painel",
+    description: "Status, atividade e ocorrências de cada local em uma única tela. Você identifica em segundos onde tem movimento, onde tem alerta e onde precisa de atenção imediata. Menos tempo procurando informação. Mais controle sobre a operação inteira — do menor posto ao contrato mais crítico.",
+    image: "https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/centralpostos.png",
+    alt: "Painel tático da rede de postos com cards de cada local exibindo status ativo, identificação e botão de gerenciar"
   },
   {
     id: "feature10",
-    icon: "👤",
-    title: "INTELIGÊNCIA DE PATRULHAMENTO",
-    description: "Geolocalização - Transforme Patrulhamento em Operação Planejada e Auditável\n\nMapeie pontos críticos, defina rotas e estabeleça janelas de tempo para cada etapa da patrulha.\nTudo estruturado para garantir cobertura, previsibilidade e controle.\n\nMais organização na execução.\nMais capacidade de auditoria e prestação de contas.",
-    image: "https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/Geolocalizacao.png",
-    inverted: false
+    group: "VISÃO, QUALIDADE E RISCO",
+    title: "CONTROLE DE QUALIDADE OPERACIONAL",
+    headline: "Saiba Onde Está o Problema Antes do Cliente",
+    description: "Inspeções padronizadas, KPIs por posto, ranking do efetivo e tendências em tempo real. Você acompanha quedas de performance, identifica pontos críticos e age antes da reclamação chegar. Menos achismo, mais dado. Menos surpresa, mais decisão. Qualidade deixa de ser percepção e vira indicador.",
+    image: "https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/InspecaoPostos.png",
+    alt: "Painel tático de inspeções operacionais com KPIs do período, performance dos postos com score médio e ranking do efetivo por função"
   },
   {
     id: "feature11",
-    icon: "👤",
-    title: "EXECUÇÃO DE RONDA",
-    description: "A Ronda Acontece com Controle e Responsabilidade\n\nO operador segue a ordem definida, com horários e janelas claras para cada ponto.\nTudo orientado para garantir execução conforme o plano.\n\nQuando algo não é realizado, o sistema exige justificativa —\ncriando registro, rastreabilidade e controle real da operação.",
-    image: "https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/cppronda1.png",
-    inverted: true
+    group: "VISÃO, QUALIDADE E RISCO",
+    title: "GESTÃO DE RISCO COM MÉTODO",
+    headline: "Risco Não Se Adivinha. Se Calcula.",
+    description: "A Lei 14.967 exige análise de risco no projeto de segurança. A ISO 18788 exige avaliação por posto, com causa-raiz documentada. O mercado ainda resolve isso com planilha solta e foto de WhatsApp. Aqui você classifica, mede Probabilidade × Impacto, recebe o score na hora e salva o registro auditado. Risco vira decisão. Decisão vira histórico.",
+    image: "https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/risco.png",
+    alt: "Tela de cadastro de novo risco operacional com categoria ISO 18788, descrição do evento, causa-raiz, sliders de probabilidade e impacto, score calculado e classificação automática do nível de risco"
   },
   {
     id: "feature12",
-    icon: "👤",
-    title: "DEFESA OPERACIONAL",
-    description: "Um Relato Mal Escrito Pode Custar Caro\n\nA Escrita Tática elimina subjetividade e corrige automaticamente a forma como a ocorrência é registrada.\n\nVocê não depende da forma como o operador escreve —\no sistema garante um padrão que sustenta sua defesa.",
-    image: "https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/reescrita.png",
-    inverted: false
+    group: "REGISTRO, BENS, MANUTENÇÃO E FACILITIES",
+    title: "LIVRO ATA DIGITAL",
+    headline: "O Papel Não Sustenta Sua Operação",
+    description: "Anotação em caderno se perde, fica ilegível e é difícil de comprovar quando o problema chega. O sistema transforma o livro de bordo em registro digital padronizado, com tipo, autor, horário e responsável pela passagem de turno. Nada fica solto. Tudo fica documentado, acessível e auditável.",
+    image: "https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/livroata.png",
+    alt: "Tela mobile do diário de bordo digital com formulário de novo registro: tipo Abertura de Turno, título e campo de recebido de"
   },
   {
     id: "feature13",
-    icon: "👤",
+    group: "REGISTRO, BENS, MANUTENÇÃO E FACILITIES",
     title: "CONTROLE DE BENS",
-    description: "Equipamento Sem Controle É Prejuízo na Certa\n\nSem rastreamento, equipamentos somem, falham ou ficam fora de uso sem ninguém perceber.\nO sistema conecta cada bem a um local e status operacional.\n\nNada fica solto. Nada fica invisível.\nVocê sabe exatamente o que está ativo, parado ou em risco.",
+    headline: "Equipamento Sem Controle É Prejuízo na Certa",
+    description: "Sem rastreamento, equipamento some, falha ou fica fora de uso sem ninguém perceber. O sistema conecta cada bem a um posto, status e histórico — com QR Code, ficha completa e inventário lido no celular. Nada fica solto. Nada fica invisível. Você sabe exatamente o que está ativo, parado ou em risco.",
     image: "https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/patrimonio.png",
-    inverted: true
+    alt: "Painel de patrimônio com totais de bens, ativos, em manutenção e aguardando validação, lista de bens com código, nome, categoria, posto e status"
   },
   {
     id: "feature14",
-    icon: "👤",
-    title: "CONTROLE DE TREINAMENTOS",
-    description: "Garanta Que Cada Posto Tenha o Profissional Certificado\n\nO sistema conecta exigências do posto, efetivo alocado e status de treinamento em uma única visão.\nVocê sabe exatamente quem está apto e quem precisa de regularização.\n\nA conformidade deixa de ser \"no papel\" —\ne passa a ser visível, controlada e acionável.",
-    image: "https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/treinamentos.png",
-    inverted: false
+    group: "REGISTRO, BENS, MANUTENÇÃO E FACILITIES",
+    title: "GESTÃO DE MANUTENÇÃO",
+    headline: "Organize, Acompanhe e Ajuste o Que Precisa Ser Feito",
+    description: "Tarefas de manutenção centralizadas por posto e por dia, com status claro do que está pendente, em andamento ou concluído. Tudo estruturado para evitar esquecimento e retrabalho. O planejamento deixa de ser informal — e passa a ser controlado, executado e cobrado no mesmo lugar.",
+    image: "https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/manutencao1.png",
+    alt: "Tela de manutenção (gestor) com indicadores de tarefas, lista de tarefas com status atual, botões de editar e cancelar tarefa, e botão adicionar tarefa"
   },
   {
     id: "feature15",
-    icon: "👤",
-    title: "SEGURANÇA NA PORTARIA",
-    description: "Sem Controle de Acesso, Não Existe Segurança\n\nSem registro estruturado, você perde visibilidade de quem entrou e quem está dentro do local.\nO sistema transforma a portaria em um ponto de controle real.\n\nVocê reduz risco, evita falhas —\ne garante agilidade sem abrir mão da segurança.",
-    image: "https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/controleacesso.png",
-    inverted: true
-  },
-  {
-    id: "feature16",
-    icon: "👤",
-    title: "GESTÃO DE MANUTENÇÃO",
-    description: "Organize, Acompanhe e Ajuste o Que Precisa Ser Feito\n\nCentralize as tarefas de manutenção por posto e por dia, com status claro do que está pendente, em andamento ou concluído.\nTudo estruturado para evitar esquecimento e retrabalho.\n\nO planejamento deixa de ser informal —\ne passa a ser controlado e executado no mesmo lugar.",
-    image: "https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/manutencao1.png",
-    inverted: false
-  },
-  {
-    id: "feature17",
-    icon: "👤",
-    title: "LIVRO ATA DIGITAL",
-    description: "O Papel Não Sustenta Sua Operação\n\nAnotações em caderno se perdem, são inconsistentes e difíceis de comprovar.\nO sistema transforma o livro de ronda em registro digital padronizado e auditável.\n\nNada fica ilegível, perdido ou sem responsável.\nTudo fica documentado e acessível.",
-    image: "https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/livroata.png",
-    inverted: true
+    group: "REGISTRO, BENS, MANUTENÇÃO E FACILITIES",
+    title: "GESTÃO DE LIMPEZA E FACILITIES",
+    headline: "A Reclamação Não Pode Chegar Antes da Informação",
+    description: "Em facilities, o cliente reclama porque viu — e o gestor descobre depois. Aqui cada ambiente tem responsável, dia, POP e checklist próprio. Nada passa batido, nada depende da memória do operador, nada some na rotatividade. A avaliação de qualidade ou irregularidade vira tema de briefing ou treinamento. Controle real do que está sendo feito, onde, por quem e em que padrão.",
+    image: "https://raw.githubusercontent.com/ATIVBRASIL/arquivos-media/refs/heads/main/limpeza.png",
+    alt: "Painel de gestão de limpeza com lista de ambientes (Guarita, Base, Sala de Comando, Salão, Academia, Área Piscina), responsáveis, dias da semana, status de execução e modal de POP e Checklist por ambiente"
   }
 ];
 
@@ -391,33 +430,52 @@ export default function Home() {
           </div>
 
           <div className="space-y-24 relative">
-            {features.map((feature, index) => (
-              <div 
-                key={feature.id}
-                className={`reveal-item flex flex-col ${feature.inverted ? "lg:flex-row-reverse" : "lg:flex-row"} gap-12 items-center relative`}
-              >
-                {/* Connector Junction */}
-                <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-white border-4 border-blue-900 rounded-full z-10" 
-                  style={{ top: '-12px' }}
-                />
-                
-                <div className="flex-1">
-                  <div className="inline-block px-4 py-2 bg-blue-900/10 border border-blue-900/30 rounded-full mb-6">
-                    <span className="text-sm font-bold text-blue-900">⚡ {feature.title}</span>
+            {features.map((feature, index) => {
+              const groupChanged = index === 0 || features[index - 1].group !== feature.group;
+              const isInverted = index % 2 === 1;
+
+              return (
+                <div key={feature.id}>
+                  {groupChanged ? (
+                    <div className="mb-8">
+                      <span className="inline-flex px-3 py-1 text-xs sm:text-sm font-semibold tracking-wide text-blue-900 bg-blue-900/10 border border-blue-900/20 rounded-full">
+                        {feature.group}
+                      </span>
+                    </div>
+                  ) : null}
+
+                  <div
+                    className={`reveal-item flex flex-col ${isInverted ? "lg:flex-row-reverse" : "lg:flex-row"} gap-12 items-center relative`}
+                  >
+                    {/* Connector Junction */}
+                    <div
+                      className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-white border-4 border-blue-900 rounded-full z-10"
+                      style={{ top: "-12px" }}
+                    />
+
+                    <div className="flex-1">
+                      <div className="inline-block px-4 py-2 bg-blue-900/10 border border-blue-900/30 rounded-full mb-6">
+                        <span className="text-sm font-bold text-blue-900">⚡ {feature.title}</span>
+                      </div>
+                      <h3 className="text-3xl font-bold text-slate-900 mb-4 font-serif">
+                        {feature.headline}
+                      </h3>
+                      <p className="text-lg text-slate-700 leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
+                    <div className="flex-1">
+                      <img
+                        src={feature.image}
+                        alt={feature.alt || feature.title}
+                        loading="lazy"
+                        className="w-full rounded-lg border-2 border-slate-200 shadow-lg"
+                      />
+                    </div>
                   </div>
-                  <p className="text-lg text-slate-700 leading-relaxed">
-                    {feature.description}
-                  </p>
                 </div>
-                <div className="flex-1">
-                  <img 
-                    src={feature.image} 
-                    alt={feature.title}
-                    className="w-full rounded-lg border-2 border-slate-200 shadow-lg"
-                  />
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
