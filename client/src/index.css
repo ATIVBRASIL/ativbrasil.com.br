@@ -119,9 +119,18 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    overflow-x: hidden;
+  }
   body {
     @apply bg-background text-foreground font-sans;
     font-family: 'Inter', sans-serif;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
@@ -166,6 +175,9 @@
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 .reveal-item.active { opacity: 1; transform: translateY(0); }
+.reveal-item > * {
+  min-width: 0;
+}
 
 .connector-junction {
   position: absolute;
@@ -356,4 +368,33 @@
   color: #fff;
   border-color: rgba(255, 255, 255, 0.35);
   transform: translateY(-1px);
+}
+
+/* Barra CTA fixa — evita 100vw (scrollbar) e libera texto no mobile */
+.floating-cta {
+  max-width: calc(100% - 32px);
+  white-space: nowrap;
+}
+@media (max-width: 767px) {
+  .floating-cta {
+    white-space: normal;
+  }
+  .floating-cta-text {
+    display: none;
+  }
+}
+
+/* Grids estilo “pillars”: uma coluna até 767px; 3 colunas só a partir de xl */
+.pillars {
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  .pillars {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1280px) {
+  .pillars {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }

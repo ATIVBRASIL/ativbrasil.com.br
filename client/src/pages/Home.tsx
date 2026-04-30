@@ -296,7 +296,7 @@ export default function Home() {
 
   return (
     <>
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50">
+    <div className="min-h-screen overflow-x-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50">
       {/* Hero Section - Light Mode Military Premium */}
       <section className="pt-20 pb-16 px-4 sm:px-6 lg:px-8 bg-white border-b border-slate-200">
         <div className="max-w-6xl mx-auto">
@@ -343,7 +343,7 @@ export default function Home() {
             9 falhas ocultas que podem custar seu próximo contrato
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid gap-6 pillars">
             {problems.map((problem) => {
               const IconComponent = problem.icon;
               return (
@@ -453,7 +453,7 @@ export default function Home() {
                       style={{ top: "-12px" }}
                     />
 
-                    <div className="flex-1">
+                    <div className="min-w-0 flex-1">
                       <div className="inline-block px-4 py-2 bg-blue-900/10 border border-blue-900/30 rounded-full mb-6">
                         <span className="text-sm font-bold text-blue-900">⚡ {feature.title}</span>
                       </div>
@@ -464,7 +464,7 @@ export default function Home() {
                         {feature.description}
                       </p>
                     </div>
-                    <div className="flex-1">
+                    <div className="min-w-0 flex-1">
                       <img
                         src={feature.image}
                         alt={feature.alt || feature.title}
@@ -507,7 +507,7 @@ export default function Home() {
             Como funciona
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid gap-8 pillars">
             {/* Card 1 */}
             <div className="rounded-xl p-8 hover:shadow-lg transition-all duration-300" style={{backgroundColor: '#ecfeff', borderWidth: '2px', borderColor: '#a7f3d0', borderStyle: 'solid'}} onMouseEnter={(e) => e.currentTarget.style.borderColor = '#10b981'} onMouseLeave={(e) => e.currentTarget.style.borderColor = '#a7f3d0'}>
               <div className="flex flex-col items-center justify-center mb-6">
@@ -605,8 +605,8 @@ export default function Home() {
             O jeito caro de operar versus o jeito de ter controle, prova e escala sem perder contrato.
           </p>
 
-          <div className="overflow-x-auto mt-12">
-            <table className="w-full border-collapse text-sm sm:text-base">
+          <div className="mt-12 max-w-full overflow-x-auto">
+            <table className="w-full min-w-0 border-collapse text-sm sm:text-base">
               <thead>
                 <tr className="bg-slate-900 text-white">
                   <th className="border border-slate-300 px-4 py-4 text-left font-semibold">Aspecto</th>
@@ -736,7 +736,7 @@ export default function Home() {
         </div>
       </section>
     </div>
-    <div className="bg-[#050505]">
+    <div className="overflow-x-hidden bg-[#050505]">
       <Footer />
     </div>
     </>
