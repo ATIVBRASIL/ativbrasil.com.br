@@ -381,7 +381,6 @@ export default function Home() {
           <h3 className="text-3xl sm:text-4xl font-bold text-slate-900 font-serif">
             O SISTEMA QUE ORGANIZA O CAOS DA SUA OPERAÇÃO
           </h3>
-          {/* min-height reserva 2 linhas (4xl ≈ 2.5rem/lh; 5xl ≈ 3rem/lh) para evitar layout shift no mobile */}
           <div className="flex w-full min-h-[6rem] flex-col items-stretch justify-start sm:min-h-[7rem]">
             <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 font-serif text-center">
               {displayText}
